@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5efe6">
+<title>Casa Peña — Departamento para 5 en el centro de Buenos Aires</title>
+<meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes a pasos del Obelisco, la Avenida Corrientes y el Congreso de la Nación. Consulta disponibilidad y reserva online.">
+<link rel="canonical" href="https://davidcortes377.github.io/propiedades/casa-pena/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://davidcortes377.github.io/propiedades/casa-pena/">
+<meta property="og:title" content="Casa Peña — Tu casa en el corazón de Buenos Aires">
+<meta property="og:description" content="Hasta 5 huéspedes · a pasos del Obelisco, Av. Corrientes y el Congreso. Consulta disponibilidad y reserva.">
+<meta property="og:image" content="https://davidcortes377.github.io/propiedades/casa-pena/og-casa-pena.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f4a3a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23f5efe6'%3ECP%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../fonts/instrument-serif-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url("../fonts/inter-variable.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("../fonts/ibm-plex-mono-500.woff2") format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/instrument-serif-regular.woff2") format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("../fonts/instrument-serif-italic.woff2") format("woff2")}
+
+:root{
+  --ink:#1d1a17;--ink-soft:#3b3530;--muted:#6b6259;
+  --paper:#f5efe6;--paper-2:#ece3d6;--card:#fbf8f3;
+  --terra:#b5604a;--terra-deep:#94472f;--green:#2f4a3a;--green-soft:#dfe6dd;
+  --hair:1px solid rgba(29,26,23,.14);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono","Courier New",monospace;
+  --gutter:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+em{font-family:var(--serif);font-style:italic}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter)}
+.meta{font:500 .74rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+section[id]{scroll-margin-top:72px}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:var(--hair)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.brand{font:400 1.7rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.brand em{color:var(--terra)}
+.nav{display:flex;gap:1.6rem;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--ink-soft)}
+.nav a:hover{color:var(--terra)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;font:600 .95rem/1 var(--sans);text-decoration:none;padding:.95rem 1.4rem;border-radius:999px;background:var(--green);color:var(--paper);transition:background .2s,transform .2s var(--ease)}
+.btn:hover{background:#243a2d;transform:translateY(-1px)}
+.btn.small{padding:.7rem 1.1rem;font-size:.85rem}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:820px){.nav{display:none}}
+
+/* hero */
+.banner{position:relative;isolation:isolate;overflow:hidden;color:var(--paper);height:clamp(230px,30vw,380px);display:flex;align-items:flex-end;padding-bottom:clamp(1.4rem,3vw,2.6rem)}
+.banner-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:35% 45%}
+.banner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(24,21,18,.8) 0%,rgba(24,21,18,.5) 50%,rgba(24,21,18,.15) 100%),linear-gradient(0deg,rgba(24,21,18,.45) 0%,rgba(24,21,18,0) 55%)}
+.banner .wrap{width:100%}
+.banner .meta{color:rgba(245,239,230,.78)}
+.banner h1{font-size:clamp(2.5rem,6.2vw,5.6rem);letter-spacing:-.02em;margin:.6rem 0 0;max-width:14ch}
+.banner h1 em{color:#f0b9a2}
+.hero{padding:clamp(2.2rem,5vw,4rem) 0 clamp(3rem,6vw,5rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero .lead{font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--ink-soft);max-width:34rem;margin-top:0}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:.6rem 2rem;margin-top:2.6rem;padding-top:1.6rem;border-top:var(--hair)}
+.facts b{display:block;font:400 2rem/1 var(--serif)}
+.facts span{font-size:.82rem;color:var(--muted)}
+.collage{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.collage figure{margin:0;position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/15;box-shadow:0 30px 60px -30px rgba(29,26,23,.5)}
+.collage figure img{width:100%;height:100%;object-fit:cover}
+.collage figure:nth-child(2){margin-top:14%}
+.collage figcaption{position:absolute;left:10px;bottom:10px;font:500 .68rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--paper);background:rgba(24,21,18,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.5rem .7rem;border-radius:999px}
+.stamp{position:absolute;left:-18px;bottom:22px;background:var(--card);border-radius:14px;padding:.85rem 1.1rem;box-shadow:0 18px 40px -20px rgba(29,26,23,.45);font-size:.85rem;line-height:1.35}
+.stamp b{font-family:var(--serif);font-weight:400;font-size:1.25rem;display:block}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,auto)}
+  .stamp{left:10px}
+  .stamp{display:none}
+}
+
+/* sections */
+.sec{padding:clamp(4rem,9vw,7rem) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)}
+.sec-head h2{font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.015em;margin-top:.7rem}
+.sec-head h2 em{color:var(--terra)}
+.sec-head p{max-width:30rem;color:var(--ink-soft)}
+.alt{background:var(--paper-2)}
+.dark{background:var(--green);color:var(--paper)}
+.dark .meta{color:rgba(245,239,230,.65)}
+.dark .sec-head p{color:rgba(245,239,230,.82)}
+.dark .sec-head h2 em{color:#e8b39f}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,240px);gap:12px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:14px;background:var(--paper-2)}
+.gallery button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery .g-wide{grid-column:span 2}.gallery .g-tall{grid-row:span 2}.gallery .g-big{grid-column:span 2;grid-row:span 2}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw;grid-auto-flow:dense}}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(94vw,1300px);max-height:92vh}
+dialog.lb::backdrop{background:rgba(20,18,16,.9)}
+dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margin:auto}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;color:var(--paper);padding:.7rem .2rem 0;font-size:.9rem}
+.lb-bar button{background:none;border:1px solid rgba(245,239,230,.4);color:var(--paper);border-radius:999px;padding:.45rem .9rem;cursor:pointer;font:inherit}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(29,26,23,.14);border:var(--hair);border-radius:18px;overflow:hidden}
+.amen div{background:var(--paper-2);padding:1.6rem 1.5rem}
+.amen h3{font-size:1.5rem;margin:.9rem 0 .35rem}
+.amen p{font-size:.94rem;color:var(--ink-soft)}
+.amen svg{width:28px;height:28px;stroke:var(--terra);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:820px){.amen{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.amen{grid-template-columns:1fr}}
+
+/* location */
+.loc{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
+.places{list-style:none;margin:0;padding:0}
+.places li{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem 1rem;padding:1.3rem 0;border-bottom:1px solid rgba(245,239,230,.18)}
+.places li:first-child{border-top:1px solid rgba(245,239,230,.18)}
+.places .n{font:500 .8rem/1.9 var(--mono);color:#e8b39f}
+.places h3{font-size:1.65rem}
+.places p{grid-column:2;color:rgba(245,239,230,.78);font-size:.95rem}
+.loc-img{position:relative;border-radius:18px;overflow:hidden;min-height:420px}
+.loc-img img{position:absolute;inset:0;height:100%;object-fit:cover}
+.loc-img figcaption{position:absolute;left:14px;bottom:14px;background:rgba(29,26,23,.7);color:var(--paper);font-size:.8rem;padding:.45rem .8rem;border-radius:999px}
+.map{margin-top:clamp(2rem,4vw,3rem);border-radius:18px;overflow:hidden;height:320px;background:#203329}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+@media (max-width:860px){.loc{grid-template-columns:1fr}.loc-img{min-height:360px}}
+
+/* booking */
+.book{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+@media (max-width:960px){.book{grid-template-columns:1fr}}
+.panel{background:var(--card);border:var(--hair);border-radius:20px;padding:clamp(1.1rem,3vw,1.8rem)}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.cal-nav button{width:40px;height:40px;border-radius:50%;border:var(--hair);background:var(--paper);cursor:pointer;font-size:1.1rem;color:var(--ink)}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.cal-nav .meta{color:var(--ink)}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+@media (max-width:640px){.months{grid-template-columns:1fr}.months .m:nth-child(2){display:none}}
+.m h3{font-size:1.5rem;text-transform:capitalize;margin-bottom:.7rem}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.dow{font:500 .68rem/2 var(--mono);text-align:center;color:var(--muted);text-transform:uppercase}
+.d{aspect-ratio:1;border:0;border-radius:9px;background:var(--green-soft);color:var(--green);font:600 .88rem/1 var(--sans);cursor:pointer;position:relative;padding:0;transition:background .15s}
+.d:hover{background:#c9d6c7}
+.d.past{background:transparent;color:#bdb3a7;cursor:default;font-weight:400}
+.d.busy{background:repeating-linear-gradient(135deg,#efd9cf 0 5px,#e7cbbf 5px 10px);color:var(--terra-deep);text-decoration:line-through;cursor:not-allowed}
+.d.today::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
+.d.inrange{background:#cfdccd;border-radius:0}
+.d.sel{background:var(--green);color:var(--paper)}
+.empty{aspect-ratio:1}
+.legend{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.2rem;font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:.4rem}
+.cal-msg{margin-top:1rem;min-height:1.5em;font-size:.9rem;color:var(--terra-deep)}
+.cal-msg.ok{color:var(--green)}
+
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+@media (max-width:480px){form .row{grid-template-columns:1fr}}
+.f{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.95rem}
+.f label{font-size:.8rem;font-weight:600;color:var(--ink-soft)}
+.f input,.f select,.f textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid rgba(29,26,23,.2);border-radius:12px;padding:.75rem .85rem;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--green);outline-offset:0;border-color:transparent}
+.f textarea{min-height:90px;resize:vertical}
+.summary{background:var(--green-soft);border-radius:12px;padding:.85rem 1rem;font-size:.92rem;color:var(--green);margin-bottom:1rem}
+.form-msg{margin-top:.9rem;font-size:.9rem}
+.form-msg.err{color:var(--terra-deep)}
+.form-msg.ok{color:var(--green)}
+.fine{font-size:.8rem;color:var(--muted);margin-top:.9rem}
+
+footer{padding:3rem 0;border-top:var(--hair);font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer .brand{font-size:1.4rem;color:var(--ink)}
+footer a{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Casa <em>Peña</em></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#departamento">El departamento</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#disponibilidad">Disponibilidad</a>
+    </nav>
+    <a class="btn small" href="#reservar">Reservar</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="banner">
+    <img class="banner-bg" src="fotos/vista-calle.jpg" alt="" width="900" height="1600" fetchpriority="high">
+    <div class="wrap">
+      <p class="meta">Buenos Aires · Centro · Obelisco &amp; Corrientes</p>
+      <h1>Tu casa en el <em>corazón</em> de Buenos Aires</h1>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="lead">Un departamento luminoso, cálido y completamente equipado, a pasos del Obelisco, los teatros de la Avenida Corrientes y el Congreso de la Nación. Ideal para familias y grupos de hasta cinco personas.</p>
+        <div class="ctas">
+          <a class="btn" href="#disponibilidad">Ver fechas disponibles</a>
+          <a class="btn ghost" href="#departamento">Ver fotos</a>
+        </div>
+        <div class="facts">
+          <div><b>5</b><span>huéspedes</span></div>
+          <div><b>1</b><span>dormitorio</span></div>
+          <div><b>1</b><span>baño completo</span></div>
+          <div><b>A/A</b><span>frío / calor</span></div>
+        </div>
+      </div>
+      <div class="collage">
+        <figure><img src="fotos/dormitorio.jpg" alt="Dormitorio con cama doble, ropa blanca y vista a los techos franceses de Buenos Aires" width="900" height="1600"><figcaption>El dormitorio</figcaption></figure>
+        <figure><img src="fotos/vista-atardecer.jpg" alt="Atardecer sobre los edificios de estilo francés, visto desde la ventana" width="900" height="1599"><figcaption>La vista al atardecer</figcaption></figure>
+        <div class="stamp"><b>A pasos del Obelisco</b>Teatros, cafés y cultura a la vuelta</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="departamento">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">01 — El departamento</p>
+          <h2>Pensado para <em>sentirse en casa</em></h2>
+        </div>
+        <p>Living con sofá cama, comedor para compartir, cocina equipada, dormitorio con vista a la ciudad y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <button class="g-big" data-i="0"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
+        <button class="g-tall" data-i="1"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
+        <button data-i="2"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama gris con espejos redondos" loading="lazy"></button>
+        <button data-i="3"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
+        <button class="g-wide" data-i="4"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
+        <button class="g-tall" data-i="5"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
+        <button data-i="6"><img src="fotos/bano.jpg" alt="Baño con bacha de apoyo y eucalipto" loading="lazy"></button>
+        <button data-i="7"><img src="fotos/dormitorio-atardecer.jpg" alt="Dormitorio al atardecer" loading="lazy"></button>
+        <button data-i="8"><img src="fotos/comedor-living.jpg" alt="Mesa puesta con vista al living" loading="lazy"></button>
+        <button data-i="9"><img src="fotos/cafetera.jpg" alt="Cafetera espresso en la cocina" loading="lazy"></button>
+        <button class="g-wide" data-i="10"><img src="fotos/sofa-comedor.jpg" alt="Living integrado con el comedor" loading="lazy"></button>
+        <button data-i="11"><img src="fotos/cocina.jpg" alt="Cocina con horno, anafe eléctrico y bacha doble" loading="lazy"></button>
+        <button data-i="12"><img src="fotos/living-tv.jpg" alt="Living con TV y mesa ratona" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">02 — Comodidades</p>
+          <h2>Todo listo para <em>tu estadía</em></h2>
+        </div>
+      </div>
+      <div class="amen">
+        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con sofá cama.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM7 14c0 2-1 3-1 5M12 14v5M17 14c0 2 1 3 1 5"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y Smart TV</h3><p>Para trabajar, planificar el día o descansar con una serie.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13M5 13h14M9 9.5h.01M15 9.5h.01M3 21h18"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M6 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M9 2v3M12 2v3"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca</h3><p>Sábanas y toallas incluidas para cada huésped.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="ubicacion">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">03 — Ubicación</p>
+          <h2>Buenos Aires, <em>a pie</em></h2>
+        </div>
+        <p>Una de las zonas más vivas y turísticas de la ciudad: teatros, librerías, pizzerías históricas y arquitectura de otra época, todo a pocas cuadras.</p>
+      </div>
+      <div class="loc">
+        <ul class="places">
+          <li><span class="n">01</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, a pocas cuadras.</p></li>
+          <li><span class="n">02</span><h3>Avenida Corrientes</h3><p>La calle que nunca duerme: teatros, musicales, librerías y pizzerías clásicas.</p></li>
+          <li><span class="n">03</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
+          <li><span class="n">04</span><h3>Edificios históricos</h3><p>Fachadas francesas, cúpulas y monumentos en cada esquina del centro.</p></li>
+        </ul>
+        <figure class="loc-img" style="margin:0">
+          <img src="fotos/vista-calle.jpg" alt="Vista desde el departamento a una calle con edificios de estilo francés" loading="lazy">
+          <figcaption>La vista desde Casa Peña</figcaption>
+        </figure>
+      </div>
+      <div class="map">
+        <iframe title="Mapa de la zona: Obelisco, Corrientes y Congreso" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Obelisco%20de%20Buenos%20Aires&amp;z=15&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="disponibilidad">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">04 — Disponibilidad y reserva</p>
+          <h2>Elige tus <em>fechas</em></h2>
+        </div>
+        <p>Toca el día de llegada y luego el de salida en el calendario. Las fechas se completan solas en el formulario.</p>
+      </div>
+      <div class="book">
+        <div class="panel">
+          <div class="cal-nav">
+            <button type="button" id="prev" aria-label="Meses anteriores">‹</button>
+            <span class="meta" id="cal-range"></span>
+            <button type="button" id="next" aria-label="Meses siguientes">›</button>
+          </div>
+          <div class="months" id="months"></div>
+          <div class="legend">
+            <span><i style="background:var(--green-soft)"></i>Disponible</span>
+            <span><i style="background:repeating-linear-gradient(135deg,#efd9cf 0 3px,#e7cbbf 3px 6px)"></i>Reservado</span>
+            <span><i style="background:var(--green)"></i>Tu selección</span>
+          </div>
+          <p class="cal-msg" id="cal-msg" aria-live="polite"></p>
+        </div>
+
+        <form class="panel" id="reservar" novalidate>
+          <h3 style="font-size:2rem;margin-bottom:1.1rem">Solicitar reserva</h3>
+          <div class="row">
+            <div class="f"><label for="in">Llegada</label><input type="date" id="in" name="entrada" required></div>
+            <div class="f"><label for="out">Salida</label><input type="date" id="out" name="salida" required></div>
+          </div>
+          <div class="summary" id="summary" hidden></div>
+          <div class="row">
+            <div class="f"><label for="name">Nombre y apellido</label><input id="name" name="nombre" autocomplete="name" required></div>
+            <div class="f"><label for="guests">Huéspedes</label>
+              <select id="guests" name="huespedes"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="f"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+            <div class="f"><label for="phone">WhatsApp / teléfono</label><input type="tel" id="phone" name="telefono" autocomplete="tel" required></div>
+          </div>
+          <div class="f"><label for="msg">Mensaje (opcional)</label><textarea id="msg" name="mensaje" placeholder="Hora estimada de llegada, motivo del viaje, preguntas…"></textarea></div>
+          <button class="btn" type="submit" style="width:100%">Enviar solicitud de reserva</button>
+          <p class="form-msg" id="form-msg" aria-live="polite"></p>
+          <p class="fine">Tu solicitud llega directo al anfitrión, que te confirma disponibilidad, precio y forma de pago. La reserva queda firme una vez confirmada.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">Casa <em>Peña</em></span>
+    <span>Departamento temporario · Centro de Buenos Aires · Hasta 5 huéspedes</span>
+    <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp: 11 2554-6238</a>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb">
+  <img id="lb-img" alt="">
+  <div class="lb-bar">
+    <button type="button" id="lb-prev">‹ Anterior</button>
+    <span id="lb-count"></span>
+    <button type="button" id="lb-next">Siguiente ›</button>
+    <button type="button" id="lb-close">Cerrar ✕</button>
+  </div>
+</dialog>
+
+<script>
+/* ===== CONFIGURACIÓN — completa estos datos =====
+   whatsapp: número con código de país, sin + ni espacios (ej. Argentina: 5491112345678)
+   email:    respaldo si no hay WhatsApp configurado */
+const CONFIG = {
+  whatsapp: "5491125546238",
+  email: "",
+  maxHuespedes: 5,
+  minNoches: 1
+};
+
+/* ---------- galería ---------- */
+(() => {
+  const btns = [...document.querySelectorAll('#gallery button')];
+  const lb = document.getElementById('lb'), img = document.getElementById('lb-img'), count = document.getElementById('lb-count');
+  let i = 0;
+  const show = n => {
+    i = (n + btns.length) % btns.length;
+    const src = btns[i].querySelector('img');
+    img.src = src.src; img.alt = src.alt;
+    count.textContent = `${i + 1} / ${btns.length}`;
+  };
+  btns.forEach((b, n) => b.addEventListener('click', () => { show(n); lb.showModal(); }));
+  document.getElementById('lb-prev').onclick = () => show(i - 1);
+  document.getElementById('lb-next').onclick = () => show(i + 1);
+  document.getElementById('lb-close').onclick = () => lb.close();
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+})();
+
+/* ---------- calendario de disponibilidad ---------- */
+const pad = n => String(n).padStart(2, '0');
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+const nights = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+const fmt = s => parse(s).toLocaleDateString('es-AR', { weekday: 'short', day: 'numeric', month: 'long' });
+
+const today = new Date(); today.setHours(0, 0, 0, 0);
+const todayISO = iso(today);
+const busy = new Set();          // noches ocupadas (AAAA-MM-DD)
+let view = new Date(today.getFullYear(), today.getMonth(), 1);
+let selIn = null, selOut = null;
+
+const $months = document.getElementById('months'), $msg = document.getElementById('cal-msg');
+const $in = document.getElementById('in'), $out = document.getElementById('out'), $sum = document.getElementById('summary');
+$in.min = todayISO; $out.min = iso(addDays(today, 1));
+
+const rangeFree = (a, b) => { for (let d = parse(a); iso(d) < b; d = addDays(d, 1)) if (busy.has(iso(d))) return false; return true; };
+
+function say(text, ok) { $msg.textContent = text; $msg.classList.toggle('ok', !!ok); }
+
+function render() {
+  $months.innerHTML = '';
+  for (let k = 0; k < 2; k++) {
+    const first = new Date(view.getFullYear(), view.getMonth() + k, 1);
+    const m = document.createElement('div'); m.className = 'm';
+    m.innerHTML = `<h3>${first.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' })}</h3>`;
+    const g = document.createElement('div'); g.className = 'grid7';
+    ['lu', 'ma', 'mi', 'ju', 'vi', 'sá', 'do'].forEach(d => g.insertAdjacentHTML('beforeend', `<span class="dow">${d}</span>`));
+    const offset = (first.getDay() + 6) % 7;
+    for (let e = 0; e < offset; e++) g.insertAdjacentHTML('beforeend', '<span class="empty"></span>');
+    const dim = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+    for (let day = 1; day <= dim; day++) {
+      const s = iso(new Date(first.getFullYear(), first.getMonth(), day));
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'd'; b.textContent = day; b.dataset.date = s;
+      let label = fmt(s);
+      if (s < todayISO) { b.classList.add('past'); b.disabled = true; }
+      else if (busy.has(s)) { b.classList.add('busy'); label += ', reservado'; }
+      else label += ', disponible';
+      if (s === todayISO) b.classList.add('today');
+      if (s === selIn || s === selOut) b.classList.add('sel');
+      if (selIn && selOut && s > selIn && s < selOut) b.classList.add('inrange');
+      b.setAttribute('aria-label', label);
+      g.appendChild(b);
+    }
+    m.appendChild(g); $months.appendChild(m);
+  }
+  const last = new Date(view.getFullYear(), view.getMonth() + 1, 1);
+  document.getElementById('cal-range').textContent =
+    `${view.toLocaleDateString('es-AR', { month: 'short' })} – ${last.toLocaleDateString('es-AR', { month: 'short', year: 'numeric' })}`;
+  document.getElementById('prev').disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
+}
+
+function pick(s) {
+  if (!selIn || selOut || s <= selIn) {
+    // eligiendo llegada
+    if (busy.has(s)) { say('Ese día ya está reservado. Elige otra fecha de llegada.'); return; }
+    selIn = s; selOut = null;
+    say(`Llegada: ${fmt(s)}. Ahora elige el día de salida.`, true);
+  } else {
+    if (!rangeFree(selIn, s)) { say('Hay noches reservadas en ese rango. Elige una salida anterior o cambia la llegada.'); return; }
+    if (nights(selIn, s) < CONFIG.minNoches) { say(`La estadía mínima es de ${CONFIG.minNoches} noches.`); return; }
+    selOut = s;
+    say(`¡Fechas disponibles! ${nights(selIn, s)} noches. Completa tus datos para solicitar la reserva.`, true);
+  }
+  syncForm(); render();
+}
+
+function syncForm() {
+  $in.value = selIn || ''; $out.value = selOut || '';
+  if (selIn) $out.min = iso(addDays(parse(selIn), 1));
+  if (selIn && selOut) {
+    $sum.hidden = false;
+    $sum.innerHTML = `<b>${nights(selIn, selOut)} noches</b> · ${fmt(selIn)} → ${fmt(selOut)}`;
+  } else $sum.hidden = true;
+}
+
+$months.addEventListener('click', e => { const b = e.target.closest('.d'); if (b && !b.disabled) pick(b.dataset.date); });
+document.getElementById('prev').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); };
+document.getElementById('next').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); };
+
+function onInputs() {
+  const a = $in.value, b = $out.value;
+  selIn = a || null; selOut = (a && b && b > a) ? b : null;
+  if (a) { const d = parse(a); view = new Date(d.getFullYear(), d.getMonth(), 1); }
+  if (a && busy.has(a)) say('La fecha de llegada ya está reservada.');
+  else if (selIn && selOut && !rangeFree(selIn, selOut)) say('Hay noches reservadas entre esas fechas.');
+  else if (selIn && selOut) say(`¡Fechas disponibles! ${nights(selIn, selOut)} noches.`, true);
+  else say('');
+  syncForm(); render();
+}
+$in.addEventListener('change', onInputs); $out.addEventListener('change', onInputs);
+
+fetch('reservas.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => (data.reservas || []).forEach(r => {
+    for (let d = parse(r.entrada); iso(d) < r.salida; d = addDays(d, 1)) busy.add(iso(d));
+  }))
+  .catch(() => say('No se pudo cargar el calendario. Igual puedes enviar tu solicitud y te confirmamos disponibilidad.'))
+  .finally(render);
+
+/* ---------- formulario ---------- */
+document.getElementById('reservar').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, out = document.getElementById('form-msg');
+  const err = t => { out.className = 'form-msg err'; out.textContent = t; };
+  const v = Object.fromEntries(new FormData(f));
+  if (!v.entrada || !v.salida || v.salida <= v.entrada) return err('Elige una fecha de llegada y una de salida posterior.');
+  if (v.entrada < todayISO) return err('La fecha de llegada no puede ser en el pasado.');
+  if (!rangeFree(v.entrada, v.salida)) return err('Algunas noches de ese rango ya están reservadas. Revisa el calendario.');
+  if (!v.nombre.trim()) return err('Escribe tu nombre.');
+  if (!f.email.checkValidity()) return err('Revisa tu email.');
+  if (v.telefono.replace(/\D/g, '').length < 7) return err('Escribe un teléfono o WhatsApp válido.');
+
+  const n = nights(v.entrada, v.salida);
+  const text = [
+    'Hola, quiero reservar *Casa Peña*.',
+    '',
+    `• Llegada: ${fmt(v.entrada)} (${v.entrada})`,
+    `• Salida: ${fmt(v.salida)} (${v.salida})`,
+    `• Noches: ${n}`,
+    `• Huéspedes: ${v.huespedes}`,
+    `• Nombre: ${v.nombre.trim()}`,
+    `• Email: ${v.email}`,
+    `• Teléfono: ${v.telefono}`,
+    v.mensaje.trim() ? `• Mensaje: ${v.mensaje.trim()}` : ''
+  ].filter(Boolean).join('\n');
+
+  if (CONFIG.whatsapp) {
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  } else if (CONFIG.email) {
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Reserva Casa Peña · ${v.entrada} → ${v.salida}`)}&body=${encodeURIComponent(text.replace(/\*/g, ''))}`;
+  } else {
+    return err('El contacto del anfitrión todavía no está configurado.');
+  }
+  out.className = 'form-msg ok';
+  out.textContent = '¡Listo! Envía el mensaje que se abrió y te confirmamos la reserva a la brevedad.';
+});
+</script>
+</body>
+</html>

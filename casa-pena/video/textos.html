@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"Inter";font-weight:400 700;src:url("../../fonts/inter-variable.woff2") format("woff2")}
+@font-face{font-family:"Mono";font-weight:500;src:url("../../fonts/ibm-plex-mono-500.woff2") format("woff2")}
+@font-face{font-family:"Serif";src:url("../../fonts/instrument-serif-regular.woff2") format("woff2")}
+@font-face{font-family:"Serif";font-style:italic;src:url("../../fonts/instrument-serif-italic.woff2") format("woff2")}
+*{margin:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
+body{position:relative}
+.c{position:absolute;inset:0;display:none;color:#f5efe6;font-family:"Inter"}
+em{font-family:"Serif";font-style:italic;color:#f0bda8}
+.low{background:linear-gradient(180deg,rgba(15,20,17,0) 55%,rgba(15,20,17,.72) 100%)}
+.top{background:linear-gradient(180deg,rgba(15,20,17,.6) 0%,rgba(15,20,17,0) 30%,rgba(15,20,17,0) 55%,rgba(15,20,17,.75) 100%)}
+.txt{position:absolute;left:84px;right:84px;bottom:230px}
+.k{font:500 26px/1 "Mono";letter-spacing:.24em;text-transform:uppercase;opacity:.85;margin-bottom:26px}
+h1{font:400 120px/.95 "Serif";letter-spacing:-.02em}
+h2{font:400 96px/1 "Serif";letter-spacing:-.015em}
+.logo{position:absolute;top:120px;left:0;right:0;text-align:center;font:400 84px/1 "Serif"}
+#fin{background:#2f4a3a;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px}
+#fin .logo{position:static;font-size:150px;margin-bottom:46px}
+#fin p{font:400 40px/1.45 "Inter";opacity:.88}
+#fin .cta{margin-top:80px;background:#f5efe6;color:#2f4a3a;border-radius:999px;padding:34px 58px;font:600 42px/1 "Inter"}
+#fin .k{margin-top:46px;margin-bottom:0}
+</style></head><body>
+<div class="c top" id="intro"><div class="logo">Casa <em>Peña</em></div>
+  <div class="txt"><p class="k">Buenos Aires · Centro</p><h1>Tu casa en el <em>corazón</em> de la ciudad</h1></div></div>
+<div class="c low" id="huespedes"><div class="txt"><p class="k">Dormitorio</p><h2>Hasta <em>5</em> huéspedes</h2></div></div>
+<div class="c low" id="living"><div class="txt"><p class="k">Living</p><h2>Espacio para <em>compartir</em></h2></div></div>
+<div class="c low" id="cocina"><div class="txt"><p class="k">Cocina</p><h2>Totalmente <em>equipada</em></h2></div></div>
+<div class="c low" id="cafe"><div class="txt"><h2>El primer <em>café</em> del día</h2></div></div>
+<div class="c low" id="atardecer"><div class="txt"><p class="k">Vista</p><h2>Atardeceres sobre <em>la ciudad</em></h2></div></div>
+<div class="c low" id="ubicacion"><div class="txt"><p class="k">Ubicación</p><h2>A pasos del <em>Obelisco</em> y Av. Corrientes</h2></div></div>
+<div class="c" id="fin"><div class="logo">Casa <em>Peña</em></div>
+  <p>Obelisco · Avenida Corrientes · Congreso</p><p>Hasta 5 huéspedes · Aire acondicionado · Wi‑Fi</p>
+  <div class="cta">Consulta fechas disponibles</div><p class="k">Reserva online · link en bio</p></div>
+<script>const t=new URLSearchParams(location.search).get('t');const el=document.getElementById(t);el.style.display=t==='fin'?'flex':'block';</script>
+</body></html>

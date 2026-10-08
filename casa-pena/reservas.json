@@ -1,0 +1,9 @@
+{
+  "_instrucciones": "Cada reserva bloquea desde 'entrada' (check-in) hasta el día anterior a 'salida' (check-out). El día de salida queda libre para un nuevo ingreso. Fechas en formato AAAA-MM-DD. Las reservas de abajo son de ejemplo: reemplázalas por las reales.",
+  "reservas": [
+    { "entrada": "2026-10-16", "salida": "2026-10-20", "nota": "Ejemplo" },
+    { "entrada": "2026-10-29", "salida": "2026-11-03", "nota": "Ejemplo" },
+    { "entrada": "2026-11-13", "salida": "2026-11-17", "nota": "Ejemplo" },
+    { "entrada": "2026-12-23", "salida": "2027-01-02", "nota": "Ejemplo" }
+  ]
+}
