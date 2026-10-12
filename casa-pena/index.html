@@ -61,6 +61,10 @@ section[id]{scroll-margin-top:72px}
 .btn.small{padding:.7rem 1.1rem;font-size:.85rem}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.airbnb{background:var(--terra)}
+.btn.airbnb:hover{background:var(--terra-deep)}
+.or{display:flex;align-items:center;gap:.8rem;margin:1.4rem 0 1rem;font-size:.8rem;color:var(--muted)}
+.or::before,.or::after{content:"";flex:1;border-top:var(--hair)}
 .nav a{white-space:nowrap}
 .nav a.on{color:var(--terra)}
 @media (max-width:980px){
@@ -267,6 +271,7 @@ footer a{color:var(--ink)}
         <div class="ctas">
           <a class="btn" href="#disponibilidad">Ver fechas disponibles</a>
           <a class="btn ghost" href="#departamento">Ver fotos</a>
+          <a class="btn airbnb" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">Reservar en Airbnb <span aria-hidden="true">↗</span></a>
         </div>
         <div class="facts">
           <div><b>5</b><span>huéspedes</span></div>
@@ -306,12 +311,12 @@ footer a{color:var(--ink)}
           <p class="meta">02 — El departamento</p>
           <h2>Pensado para <em>sentirse en casa</em></h2>
         </div>
-        <p>Living con sofá cama, dormitorio con vista a los techos de la ciudad, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
+        <p>Dormitorio con cama doble y vista a los techos de la ciudad, living con sofá cama doble y cama sencilla, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
       </div>
       <div class="gallery" id="gallery">
         <button class="g-big" data-i="0"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
         <button class="g-tall" data-i="1"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
-        <button data-i="2"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama gris con espejos redondos" loading="lazy"></button>
+        <button data-i="2"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama doble gris con espejos redondos" loading="lazy"></button>
         <button data-i="3"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
         <button class="g-wide" data-i="4"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
         <button class="g-tall" data-i="5"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
@@ -335,12 +340,12 @@ footer a{color:var(--ink)}
         </div>
       </div>
       <div class="amen">
-        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>1 dormitorio con cama doble, sofá cama en el living y 1 baño completo.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con un sofá cama doble grande y una cama sencilla. 1 baño completo.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM7 14c0 2-1 3-1 5M12 14v5M17 14c0 2 1 3 1 5"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series desde el celular.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13M5 13h14M9 9.5h.01M15 9.5h.01M3 21h18"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M6 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M9 2v3M12 2v3"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca</h3><p>Sábanas y toallas incluidas para cada huésped.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca y básicos</h3><p>Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo.</p></div>
       </div>
     </div>
   </section>
@@ -466,6 +471,9 @@ footer a{color:var(--ink)}
           <button class="btn" type="submit" style="width:100%">Enviar solicitud de reserva</button>
           <p class="form-msg" id="form-msg" aria-live="polite"></p>
           <p class="fine">Tu solicitud llega directo al anfitrión, que te confirma disponibilidad, precio y forma de pago. La reserva queda firme una vez confirmada.</p>
+          <div class="or"><span>o si prefieres</span></div>
+          <a class="btn airbnb" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener" style="width:100%">Reservar en Airbnb <span aria-hidden="true">↗</span></a>
+          <p class="fine" style="text-align:center">Pago y reserva protegidos por Airbnb.</p>
         </form>
       </div>
     </div>
@@ -484,9 +492,12 @@ footer a{color:var(--ink)}
           <h3>Normas de la casa</h3>
           <ul class="rules">
             <li><b>No se permiten fiestas ni eventos.</b> El edificio es residencial: cuidemos el descanso de los vecinos.</li>
-            <li><b>No se fuma dentro del departamento.</b> Tampoco cigarrillos electrónicos.</li>
+            <li><b>No se permite fumar</b> dentro del departamento.</li>
+            <li><b>Silencio de 23 a 7 h.</b> Por el descanso de todos en el edificio.</li>
             <li><b>Máximo 5 huéspedes.</b> Solo se alojan las personas incluidas en la reserva.</li>
+            <li><b>No se permiten mascotas.</b> Los animales de servicio sí son bienvenidos.</li>
             <li><b>Cuida la casa como si fuera tuya.</b> Si algo se rompe o no funciona, avísanos y lo resolvemos.</li>
+            <li><b>Antes de irte:</b> junta las toallas usadas, apaga los aparatos y devuelve las llaves.</li>
           </ul>
         </div>
         <div class="guide-col faq">
@@ -512,7 +523,7 @@ footer a{color:var(--ink)}
           <h3>Preguntas frecuentes</h3>
           <details>
             <summary>¿A qué hora es la llegada y la salida?</summary>
-            <p>Los horarios de check-in y check-out se coordinan por WhatsApp antes de tu llegada.</p>
+            <p>El check-in es a partir de las 12:00 y el check-out, antes de las 11:00. Si necesitas otro horario, consúltanos por WhatsApp.</p>
           </details>
           <details>
             <summary>¿Cómo llego en transporte público?</summary>
@@ -520,7 +531,7 @@ footer a{color:var(--ink)}
           </details>
           <details>
             <summary>¿Hay ropa blanca y toallas?</summary>
-            <p>Sí. Sábanas y toallas están incluidas para cada huésped.</p>
+            <p>Sí. Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo están incluidos. El departamento no tiene lavarropas.</p>
           </details>
           <details>
             <summary>¿Puedo cocinar?</summary>
