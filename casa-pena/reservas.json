@@ -1,9 +1,9 @@
 {
-  "_instrucciones": "Cada reserva bloquea desde 'entrada' (check-in) hasta el día anterior a 'salida' (check-out). El día de salida queda libre para un nuevo ingreso. Fechas en formato AAAA-MM-DD. Las reservas de abajo son de ejemplo: reemplázalas por las reales.",
+  "_instrucciones": "Archivo generado automáticamente cada hora desde el calendario de Airbnb. No lo edites a mano: agrega las reservas que no vienen de Airbnb en reservas-manuales.json.",
   "reservas": [
-    { "entrada": "2026-10-16", "salida": "2026-10-20", "nota": "Ejemplo" },
-    { "entrada": "2026-10-29", "salida": "2026-11-03", "nota": "Ejemplo" },
-    { "entrada": "2026-11-13", "salida": "2026-11-17", "nota": "Ejemplo" },
-    { "entrada": "2026-12-23", "salida": "2027-01-02", "nota": "Ejemplo" }
+    {"entrada": "2026-10-10", "salida": "2026-10-13"},
+    {"entrada": "2026-10-20", "salida": "2026-10-22"},
+    {"entrada": "2026-10-24", "salida": "2026-10-25"},
+    {"entrada": "2026-11-07", "salida": "2026-11-09"}
   ]
 }

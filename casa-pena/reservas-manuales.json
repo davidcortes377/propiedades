@@ -1,0 +1,4 @@
+{
+  "_instrucciones": "Reservas que no vienen de Airbnb (por WhatsApp, directas, etc.). Cada reserva bloquea desde 'entrada' (check-in) hasta el día anterior a 'salida' (check-out). Fechas en formato AAAA-MM-DD. Ejemplo: { \"entrada\": \"2026-12-01\", \"salida\": \"2026-12-05\", \"nota\": \"Juan, por WhatsApp\" }. La nota no se publica en la web. Cada hora se suman a reservas.json.",
+  "reservas": []
+}

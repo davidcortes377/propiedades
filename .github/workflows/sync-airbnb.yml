@@ -1,0 +1,45 @@
+name: Sincronizar calendario de Airbnb
+
+on:
+  schedule:
+    - cron: '17 * * * *' # cada hora
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - casa-pena/reservas-manuales.json
+      - .github/scripts/sync-airbnb.mjs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-airbnb
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Descargar iCal y generar reservas.json
+        env:
+          AIRBNB_ICAL: ${{ secrets.AIRBNB_ICAL }}
+        run: node .github/scripts/sync-airbnb.mjs
+
+      - name: Commit si hubo cambios
+        run: |
+          if git diff --quiet -- casa-pena/reservas.json; then
+            echo "Sin cambios."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add casa-pena/reservas.json
+          git commit -m "Actualiza reservas desde Airbnb"
+          git push
