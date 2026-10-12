@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5efe6">
 <title>Casa Peña — Departamento para 5 en el centro de Buenos Aires</title>
-<meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes a pasos del Obelisco, la Avenida Corrientes y el Congreso de la Nación. Consulta disponibilidad y reserva online.">
+<meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes en Rodríguez Peña 223, a 2 cuadras de la Avenida Corrientes, cerca del Congreso, el Obelisco y la zona de teatros. Consulta disponibilidad y reserva online.">
 <link rel="canonical" href="https://davidcortes377.github.io/propiedades/casa-pena/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://davidcortes377.github.io/propiedades/casa-pena/">
 <meta property="og:title" content="Casa Peña — Tu casa en el corazón de Buenos Aires">
-<meta property="og:description" content="Hasta 5 huéspedes · a pasos del Obelisco, Av. Corrientes y el Congreso. Consulta disponibilidad y reserva.">
+<meta property="og:description" content="Hasta 5 huéspedes · a 2 cuadras de Av. Corrientes, cerca del Congreso y el Obelisco. Consulta disponibilidad y reserva.">
 <meta property="og:image" content="https://davidcortes377.github.io/propiedades/casa-pena/og-casa-pena.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -53,7 +53,7 @@ section[id]{scroll-margin-top:72px}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
 .brand{font:400 1.7rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
 .brand em{color:var(--terra)}
-.nav{display:flex;gap:1.6rem;font-size:.92rem}
+.nav{display:flex;gap:1.4rem;font-size:.9rem;position:relative}
 .nav a{text-decoration:none;color:var(--ink-soft)}
 .nav a:hover{color:var(--terra)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;font:600 .95rem/1 var(--sans);text-decoration:none;padding:.95rem 1.4rem;border-radius:999px;background:var(--green);color:var(--paper);transition:background .2s,transform .2s var(--ease)}
@@ -61,7 +61,14 @@ section[id]{scroll-margin-top:72px}
 .btn.small{padding:.7rem 1.1rem;font-size:.85rem}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-@media (max-width:820px){.nav{display:none}}
+.nav a{white-space:nowrap}
+.nav a.on{color:var(--terra)}
+@media (max-width:980px){
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:.7rem;row-gap:0}
+  .nav{order:3;width:calc(100% + 2 * var(--gutter));margin:0 calc(-1 * var(--gutter));padding:.75rem var(--gutter) .8rem;overflow-x:auto;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 85%,transparent);mask:linear-gradient(90deg,#000 85%,transparent)}
+  .nav::-webkit-scrollbar{display:none}
+  section[id]{scroll-margin-top:110px}
+}
 
 /* hero */
 .banner{position:relative;isolation:isolate;overflow:hidden;color:var(--paper);height:clamp(230px,30vw,380px);display:flex;align-items:flex-end;padding-bottom:clamp(1.4rem,3vw,2.6rem)}
@@ -151,6 +158,35 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .map{margin-top:clamp(2rem,4vw,3rem);border-radius:18px;overflow:hidden;height:320px;background:#203329}
 .map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
 @media (max-width:860px){.loc{grid-template-columns:1fr}.loc-img{min-height:360px}}
+.places .n{white-space:nowrap}
+.places li{grid-template-columns:3.6rem 1fr}
+.loc-note{margin-top:1rem;font-size:.85rem;color:rgba(245,239,230,.7)}
+.loc-note a{color:var(--paper)}
+
+/* qué hay cerca */
+.near{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
+.near h3{font-size:1.7rem;padding-bottom:.9rem;border-bottom:1px solid var(--ink)}
+.near ul{list-style:none;margin:0;padding:0}
+.near li{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:1rem 0;border-bottom:var(--hair)}
+.near li b{font-weight:600;font-size:1rem}
+.near li span{grid-column:1;font-size:.88rem;color:var(--muted);line-height:1.45}
+.near li i{grid-column:2;grid-row:1/span 2;font:500 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--terra-deep);white-space:nowrap}
+@media (max-width:900px){.near{grid-template-columns:1fr}}
+
+/* guía */
+.guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem);align-items:start}
+.guide h3{font-size:1.7rem;padding-bottom:.9rem;border-bottom:1px solid rgba(245,239,230,.35)}
+.rules{list-style:none;margin:0;padding:0}
+.rules li{padding:1rem 0;border-bottom:1px solid rgba(245,239,230,.18);font-size:.94rem;color:rgba(245,239,230,.8)}
+.rules b{display:block;color:var(--paper);font-weight:600;margin-bottom:.2rem}
+.faq details{border-bottom:1px solid rgba(245,239,230,.18)}
+.faq summary{list-style:none;cursor:pointer;padding:1rem 2rem 1rem 0;position:relative;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:.8rem;font:400 1.5rem/1 var(--serif);color:#e8b39f;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.1rem;font-size:.94rem;color:rgba(245,239,230,.8)}
+.faq a{color:var(--paper)}
+@media (max-width:960px){.guide{grid-template-columns:1fr}}
 
 /* booking */
 .book{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
@@ -204,10 +240,12 @@ footer a{color:var(--ink)}
   <div class="wrap">
     <a class="brand" href="#inicio">Casa <em>Peña</em></a>
     <nav class="nav" aria-label="Principal">
-      <a href="#recorrido">Recorrido</a>
-      <a href="#departamento">El departamento</a>
+      <a href="#departamento">Fotos</a>
+      <a href="#comodidades">Características</a>
       <a href="#ubicacion">Ubicación</a>
-      <a href="#disponibilidad">Disponibilidad</a>
+      <a href="#cerca">Qué hay cerca</a>
+      <a href="#disponibilidad">Calendario</a>
+      <a href="#guia">Guía</a>
     </nav>
     <a class="btn small" href="#reservar">Reservar</a>
   </div>
@@ -217,7 +255,7 @@ footer a{color:var(--ink)}
   <section class="banner">
     <img class="banner-bg" src="fotos/vista-calle.jpg" alt="" width="900" height="1600" fetchpriority="high">
     <div class="wrap">
-      <p class="meta">Buenos Aires · Centro · Obelisco &amp; Corrientes</p>
+      <p class="meta">Rodríguez Peña 223 · Centro · Buenos Aires</p>
       <h1>Tu casa en el <em>corazón</em> de Buenos Aires</h1>
     </div>
   </section>
@@ -225,22 +263,22 @@ footer a{color:var(--ink)}
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="lead">Un departamento luminoso, cálido y completamente equipado, a pasos del Obelisco, los teatros de la Avenida Corrientes y el Congreso de la Nación. Ideal para familias y grupos de hasta cinco personas.</p>
+        <p class="lead">Un departamento luminoso, cálido y completamente equipado en el centro histórico de Buenos Aires: a 2 cuadras de la Avenida Corrientes y su zona de teatros, cerca del Congreso y del Obelisco, rodeado de bares notables y restaurantes. Ideal para familias y grupos de hasta cinco personas.</p>
         <div class="ctas">
           <a class="btn" href="#disponibilidad">Ver fechas disponibles</a>
           <a class="btn ghost" href="#departamento">Ver fotos</a>
         </div>
         <div class="facts">
           <div><b>5</b><span>huéspedes</span></div>
-          <div><b>1</b><span>dormitorio</span></div>
-          <div><b>1</b><span>baño completo</span></div>
+          <div><b>2</b><span>cuadras de Av. Corrientes</span></div>
+          <div><b>7 min</b><span>a pie del Congreso</span></div>
           <div><b>A/A</b><span>frío / calor</span></div>
         </div>
       </div>
       <div class="collage">
         <figure><img src="fotos/dormitorio.jpg" alt="Dormitorio con cama doble, ropa blanca y vista a los techos franceses de Buenos Aires" width="900" height="1600"><figcaption>El dormitorio</figcaption></figure>
         <figure><img src="fotos/vista-atardecer.jpg" alt="Atardecer sobre los edificios de estilo francés, visto desde la ventana" width="900" height="1599"><figcaption>La vista al atardecer</figcaption></figure>
-        <div class="stamp"><b>A pasos del Obelisco</b>Teatros, cafés y cultura a la vuelta</div>
+        <div class="stamp"><b>En la zona de teatros</b>Bares notables y cultura a la vuelta</div>
       </div>
     </div>
   </section>
@@ -268,14 +306,14 @@ footer a{color:var(--ink)}
           <p class="meta">02 — El departamento</p>
           <h2>Pensado para <em>sentirse en casa</em></h2>
         </div>
-        <p>Living con sofá cama, comedor para compartir, cocina equipada, dormitorio con vista a la ciudad y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
+        <p>Living con sofá cama, dormitorio con vista a los techos de la ciudad, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
       </div>
       <div class="gallery" id="gallery">
-        <button class="g-big" data-i="0"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
+        <button class="g-big" data-i="0"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
         <button class="g-tall" data-i="1"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
         <button data-i="2"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama gris con espejos redondos" loading="lazy"></button>
         <button data-i="3"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
-        <button class="g-wide" data-i="4"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
+        <button class="g-wide" data-i="4"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
         <button class="g-tall" data-i="5"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
         <button data-i="6"><img src="fotos/bano.jpg" alt="Baño con bacha de apoyo y eucalipto" loading="lazy"></button>
         <button data-i="7"><img src="fotos/dormitorio-atardecer.jpg" alt="Dormitorio al atardecer" loading="lazy"></button>
@@ -288,18 +326,18 @@ footer a{color:var(--ink)}
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="comodidades">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">03 — Comodidades</p>
+          <p class="meta">03 — Características</p>
           <h2>Todo listo para <em>tu estadía</em></h2>
         </div>
       </div>
       <div class="amen">
-        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con sofá cama.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>1 dormitorio con cama doble, sofá cama en el living y 1 baño completo.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM7 14c0 2-1 3-1 5M12 14v5M17 14c0 2 1 3 1 5"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y Smart TV</h3><p>Para trabajar, planificar el día o descansar con una serie.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series desde el celular.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13M5 13h14M9 9.5h.01M15 9.5h.01M3 21h18"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M6 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M9 2v3M12 2v3"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca</h3><p>Sábanas y toallas incluidas para cada huésped.</p></div>
@@ -314,14 +352,14 @@ footer a{color:var(--ink)}
           <p class="meta">04 — Ubicación</p>
           <h2>Buenos Aires, <em>a pie</em></h2>
         </div>
-        <p>Una de las zonas más vivas y turísticas de la ciudad: teatros, librerías, pizzerías históricas y arquitectura de otra época, todo a pocas cuadras.</p>
+        <p>Rodríguez Peña 223, C1020, en pleno centro histórico. Una de las zonas más vivas de la ciudad: teatros, librerías, pizzerías de siempre, bares notables y arquitectura de otra época, todo a pocas cuadras.</p>
       </div>
       <div class="loc">
         <ul class="places">
-          <li><span class="n">01</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, a pocas cuadras.</p></li>
-          <li><span class="n">02</span><h3>Avenida Corrientes</h3><p>La calle que nunca duerme: teatros, musicales, librerías y pizzerías clásicas.</p></li>
-          <li><span class="n">03</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
-          <li><span class="n">04</span><h3>Edificios históricos</h3><p>Fachadas francesas, cúpulas y monumentos en cada esquina del centro.</p></li>
+          <li><span class="n">3 min</span><h3>Avenida Corrientes</h3><p>A 2 cuadras: la calle de los teatros, las librerías y las pizzerías clásicas.</p></li>
+          <li><span class="n">7 min</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
+          <li><span class="n">15 min</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
+          <li><span class="n">15 min</span><h3>Teatro Colón</h3><p>Uno de los grandes teatros líricos del mundo, con visitas guiadas.</p></li>
         </ul>
         <figure class="loc-img" style="margin:0">
           <img src="fotos/vista-calle.jpg" alt="Vista desde el departamento a una calle con edificios de estilo francés" loading="lazy">
@@ -329,7 +367,55 @@ footer a{color:var(--ink)}
         </figure>
       </div>
       <div class="map">
-        <iframe title="Mapa de la zona: Obelisco, Corrientes y Congreso" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Obelisco%20de%20Buenos%20Aires&amp;z=15&amp;output=embed"></iframe>
+        <iframe title="Mapa: Casa Peña en Rodríguez Peña 223, Buenos Aires" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20C1020%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed"></iframe>
+      </div>
+      <p class="loc-note">Minutos caminando, aproximados. <a href="https://www.google.com/maps/search/?api=1&amp;query=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></p>
+    </div>
+  </section>
+
+  <section class="sec" id="cerca">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">05 — Qué hay cerca</p>
+          <h2>Todo a <em>pocos pasos</em></h2>
+        </div>
+        <p>Desde la puerta llegas caminando a los íconos de la ciudad, a los cafés de siempre y a la cartelera porteña. Tiempos aproximados, a paso tranquilo.</p>
+      </div>
+      <div class="near">
+        <div class="near-col">
+          <h3>Íconos de la ciudad</h3>
+          <ul>
+            <li><b>Congreso de la Nación</b><span>El Palacio del Congreso y su plaza, con el Kilómetro Cero.</span><i>7 min</i></li>
+            <li><b>Palacio Barolo</b><span>Av. de Mayo 1370. Edificio inspirado en la Divina Comedia, con visitas a su faro.</span><i>9 min</i></li>
+            <li><b>Plaza Lavalle y Tribunales</b><span>El Palacio de Justicia y una plaza arbolada frente al Colón.</span><i>12 min</i></li>
+            <li><b>Palacio de Aguas Corrientes</b><span>Av. Córdoba 1950. Fachada de cerámicas y un museo adentro.</span><i>13 min</i></li>
+            <li><b>Obelisco y Av. 9 de Julio</b><span>El símbolo de Buenos Aires.</span><i>15 min</i></li>
+            <li><b>Plaza de Mayo y Casa Rosada</b><span>Por la Avenida de Mayo, pasando por cafés históricos.</span><i>25 min</i></li>
+          </ul>
+        </div>
+        <div class="near-col">
+          <h3>Bares notables y pizzerías</h3>
+          <ul>
+            <li><b>El Gato Negro</b><span>Av. Corrientes 1669. Café y almacén de especias de otra época.</span><i>4 min</i></li>
+            <li><b>Confitería del Molino</b><span>Callao y Rivadavia. Joya art nouveau frente al Congreso.</span><i>6 min</i></li>
+            <li><b>La Giralda</b><span>Av. Corrientes 1453. El clásico chocolate con churros.</span><i>7 min</i></li>
+            <li><b>Güerrín y Banchero</b><span>Av. Corrientes al 1300. Pizza porteña al molde y fugazzeta.</span><i>9 min</i></li>
+            <li><b>Los 36 Billares</b><span>Av. de Mayo 1265. Café, billar y tango.</span><i>10 min</i></li>
+            <li><b>Café Tortoni</b><span>Av. de Mayo 825. El café más antiguo de la ciudad.</span><i>18 min</i></li>
+          </ul>
+        </div>
+        <div class="near-col">
+          <h3>Teatros y paseos</h3>
+          <ul>
+            <li><b>Teatro San Martín</b><span>Av. Corrientes 1530. Teatro, cine y danza.</span><i>5 min</i></li>
+            <li><b>Teatro Colón</b><span>Cerrito 628. Ópera, ballet y visitas guiadas.</span><i>15 min</i></li>
+            <li><b>Teatro Cervantes</b><span>Av. Córdoba 1155. El Teatro Nacional.</span><i>17 min</i></li>
+            <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3–18 min</i></li>
+            <li><b>Peatonal Lavalle</b><span>La calle de los cines, camino a Florida.</span><i>20 min</i></li>
+            <li><b>Calle Florida</b><span>La peatonal comercial del centro, hasta Galerías Pacífico.</span><i>24 min</i></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -338,7 +424,7 @@ footer a{color:var(--ink)}
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">05 — Disponibilidad y reserva</p>
+          <p class="meta">06 — Calendario y reserva</p>
           <h2>Elige tus <em>fechas</em></h2>
         </div>
         <p>Toca el día de llegada y luego el de salida en el calendario. Las fechas se completan solas en el formulario.</p>
@@ -384,6 +470,70 @@ footer a{color:var(--ink)}
       </div>
     </div>
   </section>
+  <section class="sec dark" id="guia">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="meta">07 — Guía para huéspedes</p>
+          <h2>Todo para una <em>buena estadía</em></h2>
+        </div>
+        <p>Normas de la casa, cómo usar cada cosa y preguntas frecuentes. Si algo no está acá, escríbenos por WhatsApp y te respondemos.</p>
+      </div>
+      <div class="guide">
+        <div class="guide-col">
+          <h3>Normas de la casa</h3>
+          <ul class="rules">
+            <li><b>No se permiten fiestas ni eventos.</b> El edificio es residencial: cuidemos el descanso de los vecinos.</li>
+            <li><b>No se fuma dentro del departamento.</b> Tampoco cigarrillos electrónicos.</li>
+            <li><b>Máximo 5 huéspedes.</b> Solo se alojan las personas incluidas en la reserva.</li>
+            <li><b>Cuida la casa como si fuera tuya.</b> Si algo se rompe o no funciona, avísanos y lo resolvemos.</li>
+          </ul>
+        </div>
+        <div class="guide-col faq">
+          <h3>Cómo usar la casa</h3>
+          <details open>
+            <summary>Wi-Fi</summary>
+            <p>Te enviamos el nombre de la red y la clave por WhatsApp al confirmar tu reserva.</p>
+          </details>
+          <details>
+            <summary>Cafetera espresso</summary>
+            <p>Antes de encenderla, cierra bien la tapa del depósito de agua. Si queda floja, puede salir vapor o agua caliente.</p>
+          </details>
+          <details>
+            <summary>Smart TV con Chromecast</summary>
+            <p>La forma correcta de usarlo es transmitir desde tu celular: conéctate al Wi-Fi de la casa, abre YouTube, Netflix u otra app compatible, toca el ícono de transmitir y elige el televisor. No hace falta iniciar sesión con tus cuentas en la TV.</p>
+          </details>
+          <details>
+            <summary>Aire acondicionado</summary>
+            <p>Funciona en frío y calor. Al salir del departamento, apágalo y cierra las ventanas.</p>
+          </details>
+        </div>
+        <div class="guide-col faq">
+          <h3>Preguntas frecuentes</h3>
+          <details>
+            <summary>¿A qué hora es la llegada y la salida?</summary>
+            <p>Los horarios de check-in y check-out se coordinan por WhatsApp antes de tu llegada.</p>
+          </details>
+          <details>
+            <summary>¿Cómo llego en transporte público?</summary>
+            <p>Tienes el subte a pocas cuadras: Línea B en la estación Callao (sobre Av. Corrientes) y Línea A en la estación Congreso (sobre Av. Rivadavia). Por Corrientes y Callao pasan muchas líneas de colectivo.</p>
+          </details>
+          <details>
+            <summary>¿Hay ropa blanca y toallas?</summary>
+            <p>Sí. Sábanas y toallas están incluidas para cada huésped.</p>
+          </details>
+          <details>
+            <summary>¿Puedo cocinar?</summary>
+            <p>Sí. La cocina tiene horno, anafe eléctrico, heladera, microondas, pava eléctrica y vajilla completa.</p>
+          </details>
+          <details>
+            <summary>¿Con quién hablo si necesito algo?</summary>
+            <p>Escríbenos por <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp al 11 2554-6238</a>.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -405,17 +555,47 @@ footer a{color:var(--ink)}
 </dialog>
 
 <script>
-/* video: se reproduce sin sonido cuando entra en pantalla y se pausa al salir */
+/* video: se reproduce con sonido al 50% cuando entra en pantalla y se pausa al salir.
+   Los navegadores bloquean el sonido automático hasta que la persona toca la página:
+   en ese caso arranca mudo y el sonido se activa al primer toque, clic o tecla. */
 (() => {
   const v = document.getElementById('tour');
-  if (!v || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let userPaused = false;
-  v.addEventListener('pause', () => { if (!v.dataset.auto) userPaused = true; delete v.dataset.auto; });
+  if (!v) return;
+  v.volume = .5;
+  let userPaused = false, userMuted = false, auto = false;
+  const setMuted = m => { auto = true; v.muted = m; auto = false; };
+  v.addEventListener('pause', () => { if (!auto) userPaused = true; auto = false; });
   v.addEventListener('play', () => { userPaused = false; });
+  v.addEventListener('volumechange', () => { if (!auto) userMuted = v.muted; });
+  const start = () => {
+    if (!userMuted) setMuted(false);
+    v.play().catch(() => { setMuted(true); v.play().catch(() => {}); });
+  };
+  const events = ['pointerdown', 'keydown', 'touchstart'];
+  const unlock = () => {
+    events.forEach(t => removeEventListener(t, unlock, true));
+    if (v.muted && !userMuted) { setMuted(false); v.volume = .5; }
+  };
+  events.forEach(t => addEventListener(t, unlock, true));
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) { if (!userPaused) v.play().catch(() => {}); }
-    else if (!v.paused) { v.dataset.auto = '1'; v.pause(); }
+    if (e.isIntersecting) { if (!userPaused) start(); }
+    else if (!v.paused) { auto = true; v.pause(); }
   }, { threshold: .5 }).observe(v);
+})();
+
+/* menú: resalta la sección visible */
+(() => {
+  const nav = document.querySelector('.nav');
+  const links = [...nav.querySelectorAll('a')];
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
+    const a = links.find(a => a.hash === '#' + e.target.id);
+    if (a && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - 16, behavior: 'smooth' });
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const el = document.querySelector(a.hash); if (el) io.observe(el); });
 })();
 
 /* ===== CONFIGURACIÓN — completa estos datos =====
