@@ -178,11 +178,22 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 @media (max-width:900px){.near{grid-template-columns:1fr}}
 
 /* guía */
-.guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem);align-items:start}
+.guide-box > summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.guide-box > summary::-webkit-details-marker{display:none}
+.guide-box > summary > span:first-child{display:flex;flex-direction:column;gap:.7rem}
+.guide-title{font:400 clamp(2.4rem,5vw,4rem)/1.02 var(--serif);letter-spacing:-.015em}
+.guide-title em{color:#e8b39f}
+.guide-sub{color:rgba(245,239,230,.75);max-width:34rem}
+.guide-toggle{flex:none;width:56px;height:56px;border-radius:50%;border:1px solid rgba(245,239,230,.4);position:relative;transition:background .2s,transform .35s var(--ease)}
+.guide-toggle::before,.guide-toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;margin:-.75px 0 0 -9px;background:var(--paper)}
+.guide-toggle::after{transform:rotate(90deg)}
+.guide-box > summary:hover .guide-toggle{background:rgba(245,239,230,.1)}
+.guide-box[open] .guide-toggle{transform:rotate(45deg)}
+.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem)}
 .guide h3{font-size:1.7rem;padding-bottom:.9rem;border-bottom:1px solid rgba(245,239,230,.35)}
-.rules{list-style:none;margin:0;padding:0}
-.rules li{padding:1rem 0;border-bottom:1px solid rgba(245,239,230,.18);font-size:.94rem;color:rgba(245,239,230,.8)}
-.rules b{display:block;color:var(--paper);font-weight:600;margin-bottom:.2rem}
+.rules{list-style:none;margin:0 0 1rem;padding:0}
+.rules li{padding:.75rem 0;border-top:1px solid rgba(245,239,230,.12);font-size:.94rem;color:rgba(245,239,230,.8)}
+.rules b{display:block;color:var(--paper);font-weight:600;margin-bottom:.15rem}
 .faq details{border-bottom:1px solid rgba(245,239,230,.18)}
 .faq summary{list-style:none;cursor:pointer;padding:1rem 2rem 1rem 0;position:relative;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
@@ -190,7 +201,11 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 1.1rem;font-size:.94rem;color:rgba(245,239,230,.8)}
 .faq a{color:var(--paper)}
+.wifi{display:flex;gap:1.2rem;align-items:center;padding-bottom:1.1rem}
+.wifi img{width:150px;flex:none;border-radius:12px}
+.wifi p{padding:0!important}
 @media (max-width:960px){.guide{grid-template-columns:1fr}}
+@media (max-width:480px){.wifi{flex-direction:column;align-items:flex-start}.wifi img{width:200px}.guide-toggle{width:44px;height:44px}}
 
 /* booking */
 .book{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
@@ -235,6 +250,16 @@ footer{padding:3rem 0;border-top:var(--hair);font-size:.88rem;color:var(--muted)
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 footer .brand{font-size:1.4rem;color:var(--ink)}
 footer a{color:var(--ink)}
+.pay{margin-top:2rem;padding-top:1.6rem;border-top:var(--hair);display:flex;flex-direction:column;gap:1rem}
+.pay-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1rem 1.4rem}
+.pay-list li{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.72rem;color:var(--muted)}
+.pay-ico{display:grid;place-items:center;width:64px;height:40px;border-radius:8px;background:var(--card);border:var(--hair);color:var(--ink-soft);text-decoration:none}
+.pay-ico svg{width:34px;height:22px}
+.pay-ico.visa{font:italic 800 .95rem/1 var(--sans);color:#1a1f71;letter-spacing:.02em}
+.pay-ico.airbnb-b{font:700 .9rem/1 var(--sans);color:#ff385c;letter-spacing:-.02em}
+.pay-ico.booking-b{background:#003580;border-color:#003580;color:#fff;font:700 .68rem/1 var(--sans);letter-spacing:-.01em}
+.pay-ico.booking-b span{color:#8fc0ff}
+.near li b small{font-weight:500;font-size:.8rem;color:var(--terra-deep)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -276,7 +301,6 @@ footer a{color:var(--ink)}
         <div class="facts">
           <div><b>5</b><span>huéspedes</span></div>
           <div><b>2</b><span>cuadras de Av. Corrientes</span></div>
-          <div><b>7 min</b><span>a pie del Congreso</span></div>
           <div><b>A/A</b><span>frío / calor</span></div>
         </div>
       </div>
@@ -295,7 +319,7 @@ footer a{color:var(--ink)}
           <p class="meta">01 — Recorrido</p>
           <h2>Conoce Casa Peña <em>por dentro</em></h2>
         </div>
-        <p>Un recorrido corto por el departamento: el living, la cocina, el dormitorio con vista a los techos de la ciudad y el atardecer desde la ventana. Activa el sonido desde el video.</p>
+        <p>Un recorrido corto por el departamento: el living, la cocina, el dormitorio con vista a los techos de la ciudad y el atardecer desde la ventana.</p>
         <a class="btn" href="#disponibilidad">Consultar fechas</a>
       </div>
       <figure class="tour-video">
@@ -342,7 +366,7 @@ footer a{color:var(--ink)}
       <div class="amen">
         <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con un sofá cama doble grande y una cama sencilla. 1 baño completo.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM7 14c0 2-1 3-1 5M12 14v5M17 14c0 2 1 3 1 5"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series desde el celular.</p></div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series favoritas.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13M5 13h14M9 9.5h.01M15 9.5h.01M3 21h18"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M6 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M9 2v3M12 2v3"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></div>
         <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca y básicos</h3><p>Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo.</p></div>
@@ -357,13 +381,14 @@ footer a{color:var(--ink)}
           <p class="meta">04 — Ubicación</p>
           <h2>Buenos Aires, <em>a pie</em></h2>
         </div>
-        <p>Rodríguez Peña 223, C1020, en pleno centro histórico. Una de las zonas más vivas de la ciudad: teatros, librerías, pizzerías de siempre, bares notables y arquitectura de otra época, todo a pocas cuadras.</p>
+        <p>Rodríguez Peña 223, en pleno centro histórico. Una de las zonas más vivas de la ciudad: teatros, librerías, pizzerías de siempre, bares notables y arquitectura de otra época, todo a pocas cuadras.</p>
       </div>
       <div class="loc">
         <ul class="places">
           <li><span class="n">3 min</span><h3>Avenida Corrientes</h3><p>A 2 cuadras: la calle de los teatros, las librerías y las pizzerías clásicas.</p></li>
           <li><span class="n">7 min</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
           <li><span class="n">15 min</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
+          <li><span class="n">13 min</span><h3>Palacio de Aguas Corrientes</h3><p>Una de las fachadas más lindas de la ciudad, con 300.000 piezas de cerámica.</p></li>
           <li><span class="n">15 min</span><h3>Teatro Colón</h3><p>Uno de los grandes teatros líricos del mundo, con visitas guiadas.</p></li>
         </ul>
         <figure class="loc-img" style="margin:0">
@@ -372,7 +397,7 @@ footer a{color:var(--ink)}
         </figure>
       </div>
       <div class="map">
-        <iframe title="Mapa: Casa Peña en Rodríguez Peña 223, Buenos Aires" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20C1020%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed"></iframe>
+        <iframe title="Mapa: Casa Peña en Rodríguez Peña 223, Buenos Aires" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed"></iframe>
       </div>
       <p class="loc-note">Minutos caminando, aproximados. <a href="https://www.google.com/maps/search/?api=1&amp;query=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></p>
     </div>
@@ -416,9 +441,10 @@ footer a{color:var(--ink)}
             <li><b>Teatro San Martín</b><span>Av. Corrientes 1530. Teatro, cine y danza.</span><i>5 min</i></li>
             <li><b>Teatro Colón</b><span>Cerrito 628. Ópera, ballet y visitas guiadas.</span><i>15 min</i></li>
             <li><b>Teatro Cervantes</b><span>Av. Córdoba 1155. El Teatro Nacional.</span><i>17 min</i></li>
-            <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3–18 min</i></li>
+            <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3 min</i></li>
             <li><b>Peatonal Lavalle</b><span>La calle de los cines, camino a Florida.</span><i>20 min</i></li>
-            <li><b>Calle Florida</b><span>La peatonal comercial del centro, hasta Galerías Pacífico.</span><i>24 min</i></li>
+            <li><b>El Ateneo Grand Splendid</b><span>Av. Santa Fe 1860. Una librería dentro de un antiguo teatro.</span><i>20 min</i></li>
+            <li><b>Calle Florida <small>(zona de cambio $)</small></b><span>La peatonal comercial del centro, hasta Galerías Pacífico.</span><i>24 min</i></li>
           </ul>
         </div>
       </div>
@@ -480,69 +506,86 @@ footer a{color:var(--ink)}
   </section>
   <section class="sec dark" id="guia">
     <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">07 — Guía para huéspedes</p>
-          <h2>Todo para una <em>buena estadía</em></h2>
+      <details class="guide-box" id="guia-box">
+        <summary>
+          <span>
+            <span class="meta">07 — Para huéspedes</span>
+            <span class="guide-title">Guía para <em>huéspedes</em></span>
+            <span class="guide-sub">Normas de la casa, Wi-Fi, cómo usar cada cosa y preguntas frecuentes.</span>
+          </span>
+          <span class="guide-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="guide">
+          <div class="faq">
+            <h3>La casa</h3>
+            <details>
+              <summary>Normas de la casa</summary>
+              <ul class="rules">
+                <li><b>No se permiten fiestas ni eventos.</b> El edificio es residencial: cuidemos el descanso de los vecinos.</li>
+                <li><b>No se permite fumar dentro del departamento.</b> Los cigarrillos electrónicos sí están permitidos.</li>
+                <li><b>Silencio de 23 a 7 h.</b> Por el descanso de todos en el edificio.</li>
+                <li><b>Máximo 5 huéspedes.</b> Solo se alojan las personas incluidas en la reserva.</li>
+                <li><b>No se permiten mascotas.</b> Los animales de servicio sí son bienvenidos.</li>
+                <li><b>Cuida la casa como si fuera tuya.</b> Si algo se rompe o no funciona, avísanos y lo resolvemos.</li>
+              </ul>
+            </details>
+            <details>
+              <summary>Wi-Fi</summary>
+              <div class="wifi">
+                <img src="fotos/wifi-qr.png" alt="Código QR para conectarse a la red Wi-Fi Personal-93F 5.8GHz" width="560" height="660" loading="lazy">
+                <p>Red: <b>Personal-93F 5.8GHz</b>. Escanea el código con la cámara del celular y te conectas sin escribir la clave. Si no puedes escanearlo, pídenos la clave por WhatsApp.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Persianas del dormitorio cuando llueve</summary>
+              <p>Por favor, cuando llueva cierra las persianas del dormitorio para que no entre agua al departamento.</p>
+            </details>
+            <details>
+              <summary>Cafetera espresso</summary>
+              <p>Antes de encenderla, cierra bien la tapa del depósito de agua. Si queda floja, puede salir vapor o agua caliente.</p>
+            </details>
+            <details>
+              <summary>Smart TV con Chromecast</summary>
+              <p>La forma correcta de usarlo es transmitir desde tu celular: conéctate al Wi-Fi de la casa, abre YouTube, Netflix u otra app compatible, toca el ícono de transmitir y elige el televisor. No hace falta iniciar sesión con tus cuentas en la TV.</p>
+            </details>
+            <details>
+              <summary>Aire acondicionado</summary>
+              <p>Funciona en frío y calor. Al salir del departamento, apágalo y cierra las ventanas.</p>
+            </details>
+            <details>
+              <summary>Antes de irte</summary>
+              <p>Junta las toallas usadas, apaga los aparatos y devuelve las llaves.</p>
+            </details>
+          </div>
+          <div class="faq">
+            <h3>Preguntas frecuentes</h3>
+            <details>
+              <summary>¿A qué hora es la llegada y la salida?</summary>
+              <p>El check-in es a partir de las 12:00 y el check-out, antes de las 11:00. Si necesitas otro horario, consúltanos por WhatsApp.</p>
+            </details>
+            <details>
+              <summary>¿Cómo llego en transporte público?</summary>
+              <p>Tienes el subte a pocas cuadras: Línea B en la estación Callao (sobre Av. Corrientes) y Línea A en la estación Congreso (sobre Av. Rivadavia). Por Corrientes y Callao pasan muchas líneas de colectivo.</p>
+            </details>
+            <details>
+              <summary>¿Hay ropa blanca y toallas?</summary>
+              <p>Sí. Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo están incluidos. El departamento no tiene lavarropas.</p>
+            </details>
+            <details>
+              <summary>¿Puedo cocinar?</summary>
+              <p>Sí. La cocina tiene horno, anafe eléctrico, heladera, microondas, pava eléctrica y vajilla completa.</p>
+            </details>
+            <details>
+              <summary>¿Dónde cambio dinero?</summary>
+              <p>Sobre la calle Florida, a unos 24 minutos caminando, hay muchas casas de cambio.</p>
+            </details>
+            <details>
+              <summary>¿Con quién hablo si necesito algo?</summary>
+              <p>Escríbenos por <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp al 11 2554-6238</a>.</p>
+            </details>
+          </div>
         </div>
-        <p>Normas de la casa, cómo usar cada cosa y preguntas frecuentes. Si algo no está acá, escríbenos por WhatsApp y te respondemos.</p>
-      </div>
-      <div class="guide">
-        <div class="guide-col">
-          <h3>Normas de la casa</h3>
-          <ul class="rules">
-            <li><b>No se permiten fiestas ni eventos.</b> El edificio es residencial: cuidemos el descanso de los vecinos.</li>
-            <li><b>No se permite fumar</b> dentro del departamento.</li>
-            <li><b>Silencio de 23 a 7 h.</b> Por el descanso de todos en el edificio.</li>
-            <li><b>Máximo 5 huéspedes.</b> Solo se alojan las personas incluidas en la reserva.</li>
-            <li><b>No se permiten mascotas.</b> Los animales de servicio sí son bienvenidos.</li>
-            <li><b>Cuida la casa como si fuera tuya.</b> Si algo se rompe o no funciona, avísanos y lo resolvemos.</li>
-            <li><b>Antes de irte:</b> junta las toallas usadas, apaga los aparatos y devuelve las llaves.</li>
-          </ul>
-        </div>
-        <div class="guide-col faq">
-          <h3>Cómo usar la casa</h3>
-          <details open>
-            <summary>Wi-Fi</summary>
-            <p>Te enviamos el nombre de la red y la clave por WhatsApp al confirmar tu reserva.</p>
-          </details>
-          <details>
-            <summary>Cafetera espresso</summary>
-            <p>Antes de encenderla, cierra bien la tapa del depósito de agua. Si queda floja, puede salir vapor o agua caliente.</p>
-          </details>
-          <details>
-            <summary>Smart TV con Chromecast</summary>
-            <p>La forma correcta de usarlo es transmitir desde tu celular: conéctate al Wi-Fi de la casa, abre YouTube, Netflix u otra app compatible, toca el ícono de transmitir y elige el televisor. No hace falta iniciar sesión con tus cuentas en la TV.</p>
-          </details>
-          <details>
-            <summary>Aire acondicionado</summary>
-            <p>Funciona en frío y calor. Al salir del departamento, apágalo y cierra las ventanas.</p>
-          </details>
-        </div>
-        <div class="guide-col faq">
-          <h3>Preguntas frecuentes</h3>
-          <details>
-            <summary>¿A qué hora es la llegada y la salida?</summary>
-            <p>El check-in es a partir de las 12:00 y el check-out, antes de las 11:00. Si necesitas otro horario, consúltanos por WhatsApp.</p>
-          </details>
-          <details>
-            <summary>¿Cómo llego en transporte público?</summary>
-            <p>Tienes el subte a pocas cuadras: Línea B en la estación Callao (sobre Av. Corrientes) y Línea A en la estación Congreso (sobre Av. Rivadavia). Por Corrientes y Callao pasan muchas líneas de colectivo.</p>
-          </details>
-          <details>
-            <summary>¿Hay ropa blanca y toallas?</summary>
-            <p>Sí. Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo están incluidos. El departamento no tiene lavarropas.</p>
-          </details>
-          <details>
-            <summary>¿Puedo cocinar?</summary>
-            <p>Sí. La cocina tiene horno, anafe eléctrico, heladera, microondas, pava eléctrica y vajilla completa.</p>
-          </details>
-          <details>
-            <summary>¿Con quién hablo si necesito algo?</summary>
-            <p>Escríbenos por <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp al 11 2554-6238</a>.</p>
-          </details>
-        </div>
-      </div>
+      </details>
     </div>
   </section>
 </main>
@@ -552,6 +595,17 @@ footer a{color:var(--ink)}
     <span class="brand">Casa <em>Peña</em></span>
     <span>Departamento temporario · Centro de Buenos Aires · Hasta 5 huéspedes</span>
     <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp: 11 2554-6238</a>
+  </div>
+  <div class="wrap pay">
+    <span class="meta">Medios de pago y reserva</span>
+    <ul class="pay-list">
+      <li><span class="pay-ico"><svg viewBox="0 0 32 20" aria-hidden="true"><rect x="1" y="2" width="30" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="10" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 6v.01M26 14v.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>Efectivo</li>
+      <li><span class="pay-ico"><svg viewBox="0 0 32 20" aria-hidden="true"><rect x="1" y="1.5" width="30" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1 6.5h30" stroke="currentColor" stroke-width="2.6"/><path d="M5 13.5h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Crédito y débito</li>
+      <li><span class="pay-ico brand visa">VISA</span>Visa</li>
+      <li><span class="pay-ico brand"><svg viewBox="0 0 32 20" aria-hidden="true"><circle cx="12" cy="10" r="7" fill="#eb001b"/><circle cx="20" cy="10" r="7" fill="#f79e1b"/><path d="M16 4.3a7 7 0 0 1 0 11.4 7 7 0 0 1 0-11.4z" fill="#ff5f00"/></svg></span>Mastercard</li>
+      <li><a class="pay-ico brand airbnb-b" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">airbnb</a>Airbnb</li>
+      <li><span class="pay-ico brand booking-b">Booking<span>.com</span></span>Booking</li>
+    </ul>
   </div>
 </footer>
 
@@ -593,6 +647,14 @@ footer a{color:var(--ink)}
     if (e.isIntersecting) { if (!userPaused) start(); }
     else if (!v.paused) { auto = true; v.pause(); }
   }, { threshold: .5 }).observe(v);
+})();
+
+/* guía: se abre al llegar desde el menú o con #guia */
+(() => {
+  const box = document.getElementById('guia-box');
+  const open = () => { if (location.hash === '#guia') box.open = true; };
+  addEventListener('hashchange', open); open();
+  document.querySelectorAll('a[href="#guia"]').forEach(a => a.addEventListener('click', () => { box.open = true; }));
 })();
 
 /* menú: resalta la sección visible */
