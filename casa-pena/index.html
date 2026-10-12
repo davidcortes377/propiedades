@@ -2,279 +2,389 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f5efe6">
-<title>Casa Peña — Departamento para 5 en el centro de Buenos Aires</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+<meta name="theme-color" content="#f4eee5">
+<title>Casa Peña | Departamento para 5 en el centro de Buenos Aires</title>
 <meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes en Rodríguez Peña 223, a 2 cuadras de la Avenida Corrientes, cerca del Congreso, el Obelisco y la zona de teatros. Consulta disponibilidad y reserva online.">
 <link rel="canonical" href="https://davidcortes377.github.io/propiedades/casa-pena/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://davidcortes377.github.io/propiedades/casa-pena/">
-<meta property="og:title" content="Casa Peña — Tu casa en el corazón de Buenos Aires">
-<meta property="og:description" content="Hasta 5 huéspedes · a 2 cuadras de Av. Corrientes, cerca del Congreso y el Obelisco. Consulta disponibilidad y reserva.">
+<meta property="og:title" content="Casa Peña | Tu casa en el corazón de Buenos Aires">
+<meta property="og:description" content="Hasta 5 huéspedes, a 2 cuadras de Av. Corrientes, cerca del Congreso y el Obelisco. Consulta disponibilidad y reserva.">
 <meta property="og:image" content="https://davidcortes377.github.io/propiedades/casa-pena/og-casa-pena.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f4a3a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23f5efe6'%3ECP%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="../fonts/bodoni-moda-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/urbanist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/bodoni-moda-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fotos/vista-calle.jpg" as="image" fetchpriority="high">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 @font-face{font-family:"Urbanist";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/urbanist-variable.woff2") format("woff2")}
-@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url("../fonts/bodoni-moda.woff2") format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url("../fonts/bodoni-moda-italic.woff2") format("woff2")}
 
+/* ---------------------------------------------------------------
+   Sistema
+   Colores: verde bosque + papel + terracota (un solo acento).
+   Formas: botones y chips en píldora; fotos y paneles 20px; campos 12px.
+   Tipografía: Urbanist para todo; Bodoni Moda itálica solo en las palabras de acento.
+---------------------------------------------------------------- */
 :root{
-  --ink:#1d1a17;--ink-soft:#3b3530;--muted:#6b6259;
-  --paper:#f5efe6;--paper-2:#ece3d6;--card:#fbf8f3;
-  --terra:#b5604a;--terra-deep:#94472f;--green:#2f4a3a;--green-soft:#dfe6dd;
-  --hair:1px solid rgba(29,26,23,.14);
+  --ink:#1f1c19;--ink-soft:#45403a;--muted:#6a625a;
+  --paper:#f4eee5;--paper-2:#ebe3d7;--card:#fbf8f3;
+  --terra:#b5604a;--terra-deep:#93462f;--terra-light:#ecb7a2;
+  --green:#2f4a3a;--green-deep:#253c2f;--green-soft:#dfe6dd;
+  --on-dark:#f4eee5;--on-dark-soft:rgba(244,238,229,.8);--on-dark-line:rgba(244,238,229,.18);
+  --line:rgba(31,28,25,.12);
+  --shadow:0 24px 48px -28px rgba(47,74,58,.45);
   --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
   --sans:"Urbanist","Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;
-  --mono:var(--sans);
-  /* Bodoni Moda: tamaño óptico bajo = trazos finos más gruesos y legibles */
   --serif-opsz:"opsz" 22;
-  --gutter:clamp(16px,4vw,56px);
+
+  --fs-label:.8125rem;
+  --fs-small:.9375rem;
+  --fs-body:1.0625rem;
+  --fs-lead:clamp(1.125rem,1rem + .4vw,1.25rem);
+  --fs-h3:clamp(1.3rem,1.15rem + .5vw,1.55rem);
+  --fs-h2:clamp(2.3rem,1.6rem + 3vw,3.9rem);
+  --fs-h1:clamp(2.9rem,1.7rem + 5vw,5.6rem);
+  --fs-statement:clamp(1.5rem,1.05rem + 1.7vw,2.45rem);
+
+  --r-media:20px;--r-field:12px;
+  --gutter:clamp(20px,4.5vw,64px);
+  --section:clamp(5rem,10vw,9rem);
+  --header:68px;
   --ease:cubic-bezier(.23,1,.32,1);
+  --ease-io:cubic-bezier(.77,0,.175,1);
+  interpolate-size:allow-keywords;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:500 1.125rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;width:100%;height:auto}
-a{color:inherit}
-h1,h2,h3{font-family:var(--sans);font-weight:600;margin:0;line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
+@media (min-width:1024px){:root{--fs-body:1.125rem}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;accent-color:var(--green);scrollbar-color:color-mix(in srgb,var(--green) 70%,transparent) var(--paper-2)}
+body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--fs-body)/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;font-kerning:normal}
+::selection{background:var(--terra);color:#fff}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+input,textarea,select{caret-color:var(--terra)}
+h1,h2,h3{font-family:var(--sans);font-weight:600;margin:0;line-height:1.1;letter-spacing:-.03em;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
-/* acentos: Bodoni Moda itálica, más gruesa y con tamaño óptico bajo para que los trazos finos no se vean borrados */
-em{font-family:var(--serif);font-style:italic;font-weight:600;font-variation-settings:var(--serif-opsz);font-size:1.06em;letter-spacing:-.01em}
-:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
-.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter)}
-.meta{font:700 .76rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}
-section[id]{scroll-margin-top:72px}
+em{font-family:var(--serif);font-style:italic;font-weight:600;font-variation-settings:var(--serif-opsz);font-size:1.06em;letter-spacing:-.01em;padding-right:.04em}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.ic{width:1.25em;height:1.25em;flex:none;fill:currentColor}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section[id]{scroll-margin-top:calc(var(--header) + 12px)}
 
-/* header */
-.top{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:var(--hair)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
-.brand{font:600 1.5rem/1 var(--sans);text-decoration:none;letter-spacing:-.03em}
+/* ---------- botones ---------- */
+.btn{--bg:var(--green);--fg:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.25rem;padding:0 1.6rem;border:0;border-radius:999px;background:var(--bg);color:var(--fg);font:600 1rem/1 var(--sans);letter-spacing:-.01em;text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s ease,color .2s ease,transform .16s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn .ic{width:1.1em;height:1.1em;transition:transform .25s var(--ease)}
+.btn-accent{--bg:var(--terra)}
+.btn-line{--bg:transparent;--fg:var(--ink);box-shadow:inset 0 0 0 1.5px currentColor}
+.btn-light{--bg:var(--on-dark);--fg:var(--green)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{--bg:var(--green-deep)}
+  .btn-accent:hover{--bg:var(--terra-deep)}
+  .btn-line:hover{--bg:var(--ink);--fg:var(--paper)}
+  .btn-light:hover{--bg:#fff}
+  .btn:hover .ic-arrow{transform:translate(2px,-2px)}
+}
+
+/* ---------- encabezado ---------- */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);transition:box-shadow .3s ease}
+.top.scrolled{box-shadow:0 1px 0 var(--line),0 12px 30px -24px rgba(47,74,58,.5)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:var(--header)}
+.brand{font:600 1.45rem/1 var(--sans);letter-spacing:-.035em;text-decoration:none;white-space:nowrap}
 .brand em{color:var(--terra)}
-.nav{display:flex;gap:1.4rem;font-size:.9rem;position:relative}
-.nav a{text-decoration:none;color:var(--ink-soft)}
-.nav a:hover{color:var(--terra)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;cursor:pointer;font:600 .95rem/1 var(--sans);text-decoration:none;padding:.95rem 1.4rem;border-radius:999px;background:var(--green);color:var(--paper);transition:background .2s,transform .2s var(--ease)}
-.btn:hover{background:#243a2d;transform:translateY(-1px)}
-.btn.small{padding:.7rem 1.1rem;font-size:.85rem}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.btn.airbnb{background:var(--terra)}
-.btn.airbnb:hover{background:var(--terra-deep)}
-.or{display:flex;align-items:center;gap:.8rem;margin:1.4rem 0 1rem;font-size:.8rem;color:var(--muted)}
-.or::before,.or::after{content:"";flex:1;border-top:var(--hair)}
-.nav a{white-space:nowrap}
-.nav a.on{color:var(--terra)}
-@media (max-width:980px){
-  .top .wrap{flex-wrap:wrap;height:auto;padding-top:.7rem;row-gap:0}
-  .nav{order:3;width:calc(100% + 2 * var(--gutter));margin:0 calc(-1 * var(--gutter));padding:.75rem var(--gutter) .8rem;overflow-x:auto;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 85%,transparent);mask:linear-gradient(90deg,#000 85%,transparent)}
+.nav{display:flex;gap:1.75rem;font-size:var(--fs-small);font-weight:600}
+.nav a{position:relative;text-decoration:none;color:var(--ink-soft);white-space:nowrap;padding:.4rem 0;transition:color .2s ease}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a.on{color:var(--terra-deep)}
+.nav a.on::after{transform:scaleX(1)}
+@media (hover:hover) and (pointer:fine){.nav a:hover{color:var(--ink)}.nav a:hover::after{transform:scaleX(1)}}
+.top .btn{min-height:2.6rem;padding:0 1.15rem;font-size:var(--fs-small)}
+@media (max-width:1060px){
+  :root{--header:112px}
+  .top .wrap{flex-wrap:wrap;height:auto;padding-top:.8rem;row-gap:0}
+  .nav{order:3;width:calc(100% + 2 * var(--gutter));margin:0 calc(-1 * var(--gutter));padding:.55rem var(--gutter) .7rem;gap:1.5rem;overflow-x:auto;scrollbar-width:none;-webkit-mask:linear-gradient(90deg,#000 82%,transparent);mask:linear-gradient(90deg,#000 82%,transparent)}
   .nav::-webkit-scrollbar{display:none}
-  section[id]{scroll-margin-top:110px}
 }
 
-/* hero */
-.banner{position:relative;isolation:isolate;overflow:hidden;color:var(--paper);height:clamp(230px,30vw,380px);display:flex;align-items:flex-end;padding-bottom:clamp(1.4rem,3vw,2.6rem)}
-.banner-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:35% 45%}
-.banner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(24,21,18,.8) 0%,rgba(24,21,18,.5) 50%,rgba(24,21,18,.15) 100%),linear-gradient(0deg,rgba(24,21,18,.45) 0%,rgba(24,21,18,0) 55%)}
-.banner .wrap{width:100%}
-.banner .meta{color:rgba(245,239,230,.78)}
-.banner h1{font-size:clamp(2.2rem,5.4vw,4.8rem);letter-spacing:-.015em;margin:.6rem 0 0;max-width:14ch}
-.banner h1 em{color:#f0b9a2}
-.hero{padding:clamp(2.2rem,5vw,4rem) 0 clamp(3rem,6vw,5rem)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
-.hero .lead{font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--ink-soft);max-width:34rem;margin-top:0}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:.6rem 2rem;margin-top:2.6rem;padding-top:1.6rem;border-top:var(--hair)}
-.facts b{display:block;font:600 1.9rem/1 var(--sans);letter-spacing:-.03em}
-.facts span{font-size:.82rem;color:var(--muted)}
-.collage{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.collage figure{margin:0;position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/15;box-shadow:0 30px 60px -30px rgba(29,26,23,.5)}
-.collage figure img{width:100%;height:100%;object-fit:cover}
-.collage figure:nth-child(2){margin-top:14%}
-.collage figcaption{position:absolute;left:10px;bottom:10px;font:700 .68rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--paper);background:rgba(24,21,18,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.5rem .7rem;border-radius:999px}
-.stamp{position:absolute;left:-18px;bottom:22px;background:var(--card);border-radius:14px;padding:.85rem 1.1rem;box-shadow:0 18px 40px -20px rgba(29,26,23,.45);font-size:.85rem;line-height:1.35}
-.stamp b{font-family:var(--sans);font-weight:700;font-size:1.15rem;letter-spacing:-.02em;display:block}
-@media (max-width:900px){
-  .hero .wrap{grid-template-columns:minmax(0,1fr)}
-  .facts{grid-template-columns:repeat(3,auto);gap:.6rem 1.6rem}
-  .stamp{left:10px}
-  .stamp{display:none}
+/* ---------- portada ---------- */
+.hero{position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,5vw,5rem);align-items:center;min-height:min(calc(100svh - var(--header)),880px);padding-top:clamp(2rem,5vw,4.5rem);padding-bottom:clamp(2.5rem,5vw,4.5rem)}
+.hero-kicker{font-size:var(--fs-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
+.hero h1{font-size:var(--fs-h1);line-height:1.04;letter-spacing:-.04em}
+.hero h1 em{color:var(--terra)}
+.line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.line>span{display:block}
+.hero-sub{font-size:var(--fs-lead);color:var(--ink-soft);max-width:30ch;margin-top:1.6rem;line-height:1.5}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.2rem}
+.hero-media{position:relative;margin:0;justify-self:end;width:min(100%,520px)}
+.hero-main{position:relative;aspect-ratio:4/5;border-radius:var(--r-media);overflow:hidden;box-shadow:var(--shadow)}
+.hero-main img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero-inset{position:absolute;left:-14%;bottom:-7%;width:42%;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:6px solid var(--paper);box-shadow:var(--shadow)}
+.hero-inset img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){
+  .hero{color:var(--on-dark);background:var(--green-deep)}
+  .hero .wrap{display:block;position:relative;z-index:1;min-height:calc(100svh - var(--header));display:flex;flex-direction:column;justify-content:flex-end;padding-top:6rem;padding-bottom:2.25rem}
+  .hero-media{position:absolute;inset:0;width:auto;z-index:0;justify-self:stretch;align-self:stretch}
+  .hero-main{position:absolute;inset:0;aspect-ratio:auto;border-radius:0;box-shadow:none}
+  .hero-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,34,29,.15) 0%,rgba(26,34,29,.1) 18%,rgba(26,34,29,.62) 38%,rgba(26,34,29,.86) 58%,rgba(26,34,29,.94) 100%)}
+  .hero-inset{display:none}
+  .hero-copy{position:relative;z-index:1}
+  .hero-kicker{color:var(--on-dark-soft)}
+  .hero h1 em{color:var(--terra-light)}
+  .hero-sub{color:var(--on-dark-soft)}
+  .hero .btn-line{--fg:var(--on-dark)}
+  .hero .btn:not(.btn-line){--bg:var(--on-dark);--fg:var(--green)}
 }
 
-/* sections */
-.sec{padding:clamp(4rem,9vw,7rem) 0}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3rem)}
-.sec-head h2{font-size:clamp(2.1rem,4.4vw,3.5rem);letter-spacing:-.01em;margin-top:.7rem}
-.sec-head h2 em{color:var(--terra)}
-.sec-head p{max-width:30rem;color:var(--ink-soft)}
-.alt{background:var(--paper-2)}
-.dark{background:var(--green);color:var(--paper)}
-.dark .meta{color:rgba(245,239,230,.65)}
-.dark .sec-head p{color:rgba(245,239,230,.82)}
-.dark .sec-head h2 em{color:#e8b39f}
+/* ---------- presentación ---------- */
+.intro{padding:var(--section) 0}
+.intro .wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(2.5rem,6vw,6rem);align-items:end}
+.statement{font-size:var(--fs-statement);line-height:1.32;letter-spacing:-.02em;font-weight:500;max-width:30ch}
+.statement strong{font-weight:600;color:var(--terra-deep)}
+.quick{list-style:none;margin:2.6rem 0 0;padding:1.6rem 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1rem 2.4rem;font-size:var(--fs-small);font-weight:600;color:var(--ink-soft)}
+.quick li{display:flex;align-items:center;gap:.55rem}
+.quick .ic{color:var(--terra);width:1.35em;height:1.35em}
+.intro figure{margin:0;aspect-ratio:4/5;border-radius:var(--r-media);overflow:hidden}
+.intro figure img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.intro .wrap{grid-template-columns:1fr}.intro figure{aspect-ratio:5/4}}
 
-/* video */
-.tour{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:clamp(2rem,6vw,5rem);align-items:center}
-.tour .sec-head{margin-bottom:0;display:block}
-.tour .sec-head p{margin-top:1.4rem}
-.tour .btn{margin-top:2rem;background:var(--paper);color:var(--green)}
-.tour .btn:hover{background:#fff}
-.tour-video{margin:0;width:100%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#203329;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
-.tour-video video{display:block;width:100%;height:100%;object-fit:cover}
-@media (max-width:820px){.tour{grid-template-columns:1fr}.tour-video{justify-self:center;width:min(100%,400px)}}
+/* ---------- encabezado de sección ---------- */
+.sec{padding:var(--section) 0}
+.head{max-width:44rem;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.head h2{font-size:var(--fs-h2)}
+.head h2 em{color:var(--terra)}
+.head p{margin-top:1.2rem;font-size:var(--fs-lead);color:var(--ink-soft);max-width:58ch;line-height:1.55}
+.tint{background:var(--paper-2)}
+.dark{background:var(--green);color:var(--on-dark)}
+.dark .head h2 em,.dark h2 em{color:var(--terra-light)}
+.dark .head p{color:var(--on-dark-soft)}
 
-/* gallery */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,240px);gap:12px}
-.gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:14px;background:var(--paper-2)}
+/* ---------- recorrido ---------- */
+.tour{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.tour .head{margin:0}
+.tour .btn{margin-top:2.2rem}
+.tour-video{margin:0;aspect-ratio:9/16;border-radius:var(--r-media);overflow:hidden;background:var(--green-deep);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.tour-video video{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.tour{grid-template-columns:1fr}.tour-video{order:2;width:min(100%,420px);justify-self:center}}
+
+/* ---------- galería ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(8px,1vw,14px)}
+.gallery button{all:unset;position:relative;overflow:hidden;border-radius:14px;background:var(--paper-2);cursor:zoom-in}
 .gallery button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.gallery button:hover img{transform:scale(1.04)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+@media (hover:hover) and (pointer:fine){.gallery button:hover img{transform:scale(1.035)}}
 .gallery .g-wide{grid-column:span 2}.gallery .g-tall{grid-row:span 2}.gallery .g-big{grid-column:span 2;grid-row:span 2}
-@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw;grid-auto-flow:dense}}
-dialog.lb{border:0;padding:0;background:transparent;max-width:min(94vw,1300px);max-height:92vh}
-dialog.lb::backdrop{background:rgba(20,18,16,.9)}
-dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margin:auto}
-.lb-bar{display:flex;justify-content:space-between;align-items:center;color:var(--paper);padding:.7rem .2rem 0;font-size:.9rem}
-.lb-bar button{background:none;border:1px solid rgba(245,239,230,.4);color:var(--paper);border-radius:999px;padding:.45rem .9rem;cursor:pointer;font:inherit}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:44vw;grid-auto-flow:dense}}
 
-/* amenities */
-.amen{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(29,26,23,.14);border:var(--hair);border-radius:18px;overflow:hidden}
-.amen div{background:var(--paper-2);padding:1.6rem 1.5rem}
-.amen h3{font-size:1.35rem;margin:.9rem 0 .35rem}
-.amen p{font-size:.94rem;color:var(--ink-soft)}
-.amen svg{width:28px;height:28px;stroke:var(--terra);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:820px){.amen{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.amen{grid-template-columns:1fr}}
+/* visor de fotos */
+dialog.lb{border:0;padding:0;margin:auto;background:transparent;max-width:min(94vw,1300px);max-height:94dvh;opacity:1;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease),overlay .3s allow-discrete,display .3s allow-discrete}
+dialog.lb:not([open]){opacity:0;transform:scale(.97)}
+@starting-style{dialog.lb[open]{opacity:0;transform:scale(.97)}}
+dialog.lb::backdrop{background:rgba(22,26,23,.92);transition:opacity .3s ease,overlay .3s allow-discrete,display .3s allow-discrete}
+dialog.lb:not([open])::backdrop{opacity:0}
+@starting-style{dialog.lb[open]::backdrop{opacity:0}}
+dialog.lb img{max-height:82dvh;width:auto;max-width:100%;border-radius:12px;margin:auto;transition:opacity .22s ease,filter .22s ease}
+dialog.lb img.swap{opacity:0;filter:blur(6px)}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;color:var(--on-dark);padding:.9rem .1rem 0;font-size:var(--fs-small);font-variant-numeric:tabular-nums}
+.lb-bar div{display:flex;gap:.5rem}
+.icon-btn{display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:999px;border:1px solid rgba(244,238,229,.35);background:transparent;color:var(--on-dark);cursor:pointer;transition:background-color .2s ease,transform .16s var(--ease)}
+.icon-btn:active{transform:scale(.94)}
+@media (hover:hover) and (pointer:fine){.icon-btn:hover{background:rgba(244,238,229,.12)}}
 
-/* location */
-.loc{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
-.places{list-style:none;margin:0;padding:0}
-.places li{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem 1rem;padding:1.3rem 0;border-bottom:1px solid rgba(245,239,230,.18)}
-.places li:first-child{border-top:1px solid rgba(245,239,230,.18)}
-.places .n{font:700 .8rem/1.9 var(--mono);color:#e8b39f}
-.places h3{font-size:1.45rem}
-.places p{grid-column:2;color:rgba(245,239,230,.78);font-size:.95rem}
-.loc-img{position:relative;border-radius:18px;overflow:hidden;min-height:420px}
-.loc-img img{position:absolute;inset:0;height:100%;object-fit:cover}
-.loc-img figcaption{position:absolute;left:14px;bottom:14px;background:rgba(29,26,23,.7);color:var(--paper);font-size:.8rem;padding:.45rem .8rem;border-radius:999px}
-.map{margin-top:clamp(2rem,4vw,3rem);border-radius:18px;overflow:hidden;height:320px;background:#203329}
-.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
-@media (max-width:860px){.loc{grid-template-columns:1fr}.loc-img{min-height:360px}}
-.places .n{white-space:nowrap}
-.places li{grid-template-columns:3.6rem 1fr}
-.loc-note{margin-top:1rem;font-size:.85rem;color:rgba(245,239,230,.7)}
-.loc-note a{color:var(--paper)}
+/* ---------- características ---------- */
+.feat-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
+.feat-media{position:sticky;top:calc(var(--header) + 24px);margin:0;aspect-ratio:4/5;border-radius:var(--r-media);overflow:hidden}
+.feat-media img{width:100%;height:100%;object-fit:cover}
+.feats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(2rem,4vw,3rem) clamp(1.5rem,3vw,2.5rem)}
+.feats li{display:grid;gap:.5rem;align-content:start}
+.feats .ic{width:1.9rem;height:1.9rem;color:var(--terra);margin-bottom:.4rem}
+.feats h3{font-size:var(--fs-h3)}
+.feats p{font-size:var(--fs-small);color:var(--ink-soft);line-height:1.55}
+@media (max-width:860px){.feat-wrap{grid-template-columns:1fr}.feat-media{position:relative;top:0;aspect-ratio:4/3}}
+@media (max-width:520px){.feats{grid-template-columns:1fr;gap:1.9rem}}
 
-/* qué hay cerca */
-.near{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
-.near h3{font-size:1.5rem;padding-bottom:.9rem;border-bottom:1px solid var(--ink)}
-.near ul{list-style:none;margin:0;padding:0}
-.near li{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:1rem 0;border-bottom:var(--hair)}
-.near li b{font-weight:600;font-size:1rem}
-.near li span{grid-column:1;font-size:.88rem;color:var(--muted);line-height:1.45}
-.near li i{grid-column:2;grid-row:1/span 2;font:700 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--terra-deep);white-space:nowrap}
-@media (max-width:900px){.near{grid-template-columns:1fr}}
+/* ---------- ubicación ---------- */
+.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2.5rem,6vw,6rem);align-items:stretch}
+.places{list-style:none;margin:0;padding:0;border-top:1px solid var(--on-dark-line)}
+.places li{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:.25rem 1.2rem;padding:1.35rem 0 0}
+.places .n{grid-row:span 2;font-size:2rem;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--terra-light);font-variant-numeric:tabular-nums}
+.places .n small{display:block;font-size:var(--fs-label);letter-spacing:.06em;font-weight:600;color:var(--on-dark-soft);margin-top:.35rem}
+.places h3{font-size:var(--fs-h3)}
+.places p{color:var(--on-dark-soft);font-size:var(--fs-small)}
+.map{position:relative;min-height:440px;border-radius:var(--r-media);overflow:hidden;background:var(--green-deep)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05) saturate(.9)}
+.loc-note{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.2rem;margin-top:1.6rem;font-size:var(--fs-small);color:var(--on-dark-soft)}
+.loc-note a{display:inline-flex;align-items:center;gap:.4rem;color:var(--on-dark);font-weight:600}
+@media (max-width:860px){.loc{grid-template-columns:1fr}.map{min-height:340px}}
 
-/* guía */
-.guide-box > summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
-.guide-box > summary::-webkit-details-marker{display:none}
-.guide-box > summary > span:first-child{display:flex;flex-direction:column;gap:.7rem}
-.guide-title{font:600 clamp(2.1rem,4.4vw,3.5rem)/1.05 var(--sans);letter-spacing:-.025em}
-.guide-title em{color:#e8b39f}
-.guide-sub{color:rgba(245,239,230,.75);max-width:34rem}
-.guide-toggle{flex:none;width:56px;height:56px;border-radius:50%;border:1px solid rgba(245,239,230,.4);position:relative;transition:background .2s,transform .35s var(--ease)}
-.guide-toggle::before,.guide-toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;margin:-.75px 0 0 -9px;background:var(--paper)}
-.guide-toggle::after{transform:rotate(90deg)}
-.guide-box > summary:hover .guide-toggle{background:rgba(245,239,230,.1)}
-.guide-box[open] .guide-toggle{transform:rotate(45deg)}
-/* contenido de la guía: tarjeta clara con texto oscuro para leer cómodo */
-.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem);background:var(--card);color:var(--ink);border-radius:24px;padding:clamp(1.2rem,3.5vw,2.6rem);box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
-.guide h3{font-size:1.5rem;color:var(--green);padding-bottom:.9rem;border-bottom:2px solid var(--green)}
-.rules{list-style:none;margin:0 0 1.2rem;padding:0;counter-reset:regla}
-.rules li{position:relative;padding:.85rem 0 .85rem 2.4rem;border-top:var(--hair);font-size:.95rem;color:var(--ink-soft);counter-increment:regla}
-.rules li::before{content:counter(regla);position:absolute;left:0;top:.85rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--terra);color:#fff;font:700 .8rem/1.6rem var(--sans);text-align:center}
-.rules b{display:block;color:var(--ink);font-weight:700;margin-bottom:.15rem}
-.faq details{border-bottom:var(--hair)}
-.faq summary{list-style:none;cursor:pointer;padding:1rem 2.2rem 1rem 0;position:relative;font-weight:600;color:var(--ink);transition:color .2s}
-.faq summary:hover,.faq details[open] > summary{color:var(--terra-deep)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:0;top:.75rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--green-soft);color:var(--green);font:400 1.2rem/1.55rem var(--sans);text-align:center;transition:transform .25s var(--ease),background .2s}
-.faq details[open] > summary::after{transform:rotate(45deg);background:var(--terra);color:#fff}
-.faq details p{padding:0 0 1.1rem;font-size:.95rem;color:var(--ink-soft)}
-.faq a{color:var(--terra-deep);font-weight:600}
-.wifi{display:flex;gap:1.2rem;align-items:center;padding-bottom:1.1rem}
-.wifi img{width:150px;flex:none;border-radius:12px;border:var(--hair)}
-.wifi p{padding:0!important}
-.wifi b{color:var(--ink)}
-@media (max-width:960px){.guide{grid-template-columns:1fr}}
-@media (max-width:480px){.wifi{flex-direction:column;align-items:flex-start}.wifi img{width:200px}.guide-toggle{width:44px;height:44px}}
+/* ---------- qué hay cerca ---------- */
+.tabs{display:none}
+.near{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(2rem,4vw,3.5rem)}
+.near h3{font-size:var(--fs-h3);padding-bottom:1rem;margin-bottom:.4rem;border-bottom:2px solid var(--ink)}
+.near ul{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem;padding-top:.8rem}
+.near li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.15rem 1rem}
+.near li b{font-weight:700;font-size:1.0625rem;letter-spacing:-.01em}
+.near li span{grid-column:1;font-size:var(--fs-small);color:var(--muted);line-height:1.5}
+.near li i{grid-column:2;grid-row:1;font-style:normal;font-size:var(--fs-label);font-weight:700;color:var(--terra-deep);white-space:nowrap;font-variant-numeric:tabular-nums;padding-top:.15rem}
+.near li b small{font-weight:600;font-size:var(--fs-label);color:var(--terra-deep)}
+@media (max-width:900px){
+  .tabs{display:flex;gap:.4rem;padding:.35rem;margin-bottom:1.6rem;border-radius:999px;background:var(--paper-2);overflow-x:auto;scrollbar-width:none}
+  .tabs button{flex:1 1 auto;min-height:2.75rem;padding:0 .8rem;border:0;border-radius:999px;background:transparent;color:var(--ink-soft);font:600 var(--fs-small)/1 var(--sans);cursor:pointer;transition:background-color .25s var(--ease),color .2s ease}
+  .tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 6px 16px -10px rgba(47,74,58,.5)}
+  .near{grid-template-columns:1fr}
+  .js .near-col:not(.on){display:none}
+  .js .near h3{display:none}
+}
 
-/* booking */
-.book{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
-@media (max-width:960px){.book{grid-template-columns:1fr}}
-.panel{background:var(--card);border:var(--hair);border-radius:20px;padding:clamp(1.1rem,3vw,1.8rem)}
-.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-.cal-nav button{width:40px;height:40px;border-radius:50%;border:var(--hair);background:var(--paper);cursor:pointer;font-size:1.1rem;color:var(--ink)}
-.cal-nav button:disabled{opacity:.35;cursor:default}
-.cal-nav .meta{color:var(--ink)}
-.months{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
-@media (max-width:640px){.months{grid-template-columns:1fr}.months .m:nth-child(2){display:none}}
-.m h3{font-size:1.35rem;margin-bottom:.7rem}
+/* ---------- calendario y reserva ---------- */
+.book{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:start}
+@media (max-width:980px){.book{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border-radius:var(--r-media);padding:clamp(1.25rem,3vw,2rem);box-shadow:0 1px 0 var(--line),0 30px 60px -45px rgba(47,74,58,.5)}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.cal-nav span{font-weight:700;font-size:var(--fs-small)}
+.cal-nav button{display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;transition:background-color .2s ease,transform .16s var(--ease)}
+.cal-nav button:active{transform:scale(.94)}
+.cal-nav button:disabled{opacity:.35;cursor:default;transform:none}
+.months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
+@media (max-width:640px){.months{grid-template-columns:minmax(0,1fr)}.months .m:nth-child(2){display:none}.m h3{display:none}}
+.m h3{font-size:1.25rem;margin-bottom:.8rem}
 .m h3::first-letter{text-transform:uppercase}
-.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-.dow{font:700 .68rem/2 var(--mono);text-align:center;color:var(--muted);text-transform:uppercase}
-.d{aspect-ratio:1;border:0;border-radius:9px;background:var(--green-soft);color:var(--green);font:600 .88rem/1 var(--sans);cursor:pointer;position:relative;padding:0;transition:background .15s}
-.d:hover{background:#c9d6c7}
-.d.past{background:transparent;color:#bdb3a7;cursor:default;font-weight:400}
-.d.busy{background:repeating-linear-gradient(135deg,#efd9cf 0 5px,#e7cbbf 5px 10px);color:var(--terra-deep);text-decoration:line-through;cursor:not-allowed}
+.grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dow{font-size:var(--fs-label);font-weight:700;text-align:center;color:var(--muted);text-transform:capitalize;padding-bottom:.3rem}
+.d{aspect-ratio:1;border:0;border-radius:10px;background:var(--green-soft);color:var(--green);font:700 1rem/1 var(--sans);font-variant-numeric:tabular-nums;cursor:pointer;position:relative;padding:0;transition:background-color .15s ease,color .15s ease,transform .14s var(--ease)}
+.d:active{transform:scale(.92)}
+@media (hover:hover) and (pointer:fine){.d:hover{background:#cad8c8}}
+.d.past{background:transparent;color:#b8aea2;cursor:default;font-weight:500}
+.d.busy{background:repeating-linear-gradient(135deg,#f0dbd1 0 5px,#e8cdc1 5px 10px);color:var(--terra-deep);text-decoration:line-through;cursor:not-allowed}
 .d.today::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor}
-.d.inrange{background:#cfdccd;border-radius:0}
-.d.sel{background:var(--green);color:var(--paper)}
+.d.inrange{background:#cddbcb;border-radius:4px}
+.d.sel{background:var(--green);color:var(--on-dark)}
 .empty{aspect-ratio:1}
-.legend{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.2rem;font-size:.82rem;color:var(--muted)}
-.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:.4rem}
-.cal-msg{margin-top:1rem;min-height:1.5em;font-size:.9rem;color:var(--terra-deep)}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-top:1.4rem;font-size:var(--fs-small);color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:.5rem}
+.legend i{width:1rem;height:1rem;border-radius:5px}
+.cal-msg{margin-top:1rem;min-height:1.5em;font-size:var(--fs-small);font-weight:600;color:var(--terra-deep)}
 .cal-msg.ok{color:var(--green)}
-
-form .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-@media (max-width:480px){form .row{grid-template-columns:1fr}}
-.f{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.95rem}
-.f label{font-size:.8rem;font-weight:600;color:var(--ink-soft)}
-.f input,.f select,.f textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1px solid rgba(29,26,23,.2);border-radius:12px;padding:.75rem .85rem;width:100%}
-.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--green);outline-offset:0;border-color:transparent}
-.f textarea{min-height:90px;resize:vertical}
-.summary{background:var(--green-soft);border-radius:12px;padding:.85rem 1rem;font-size:.92rem;color:var(--green);margin-bottom:1rem}
-.form-msg{margin-top:.9rem;font-size:.9rem}
+.form-title{font-size:clamp(1.6rem,1.3rem + 1vw,2rem);margin-bottom:1.4rem}
+form .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+@media (max-width:480px){form .row{grid-template-columns:minmax(0,1fr);gap:0}}
+.f{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;min-width:0}
+.f label{font-size:var(--fs-small);font-weight:700;color:var(--ink-soft)}
+.f input,.f select,.f textarea{display:block;width:100%;min-width:0;min-height:3.1rem;font:500 1rem/1.3 var(--sans);color:var(--ink);background:var(--paper);border:1px solid rgba(31,28,25,.22);border-radius:var(--r-field);padding:.75rem .9rem;transition:border-color .2s ease,box-shadow .2s ease;-webkit-appearance:none;appearance:none}
+.f select{background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:2.4rem}
+.f input[type="date"]{line-height:1.6}
+.f input::-webkit-date-and-time-value{text-align:left}
+.f input::placeholder,.f textarea::placeholder{color:#857c72}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--green);box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 22%,transparent)}
+.f textarea{min-height:96px;resize:vertical}
+.summary{background:var(--green-soft);border-radius:var(--r-field);padding:.9rem 1rem;font-size:var(--fs-small);color:var(--green);margin-bottom:1rem}
+.form-msg{margin-top:.9rem;font-size:var(--fs-small);font-weight:600}
 .form-msg.err{color:var(--terra-deep)}
 .form-msg.ok{color:var(--green)}
-.fine{font-size:.8rem;color:var(--muted);margin-top:.9rem}
+.fine{font-size:var(--fs-small);color:var(--muted);margin-top:.9rem;line-height:1.5}
+.or{display:flex;align-items:center;gap:.9rem;margin:1.5rem 0 1.1rem;font-size:var(--fs-small);color:var(--muted)}
+.or::before,.or::after{content:"";flex:1;border-top:1px solid var(--line)}
+.btn-block{width:100%}
 
-footer{padding:3rem 0;border-top:var(--hair);font-size:.88rem;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-footer .brand{font-size:1.4rem;color:var(--ink)}
-footer a{color:var(--ink)}
-.pay{margin-top:2rem;padding-top:1.6rem;border-top:var(--hair);display:flex;flex-direction:column;gap:1rem}
-.pay-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1rem 1.4rem}
-.pay-list li{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.72rem;color:var(--muted)}
-.pay-ico{display:grid;place-items:center;width:64px;height:40px;border-radius:8px;background:var(--card);border:var(--hair);color:var(--ink-soft);text-decoration:none}
-.pay-ico svg{width:34px;height:22px}
-.pay-ico.visa{font:italic 800 .95rem/1 var(--sans);color:#1a1f71;letter-spacing:.02em}
-.pay-ico.airbnb-b{font:700 .9rem/1 var(--sans);color:#ff385c;letter-spacing:-.02em}
-.pay-ico.booking-b{display:flex;align-items:center;justify-content:center;background:#003580;border-color:#003580;color:#fff;font:700 .66rem/1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
-.pay-ico.booking-b span{color:#8fc0ff}
-.near li b small{font-weight:500;font-size:.8rem;color:var(--terra-deep)}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* ---------- guía ---------- */
+.guide-box>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.guide-box>summary::-webkit-details-marker{display:none}
+.guide-title{display:block;font-size:var(--fs-h2);font-weight:600;line-height:1.1;letter-spacing:-.03em}
+.guide-sub{display:block;margin-top:1rem;font-size:var(--fs-lead);color:var(--on-dark-soft);max-width:44ch}
+.guide-toggle{flex:none;position:relative;width:3.5rem;height:3.5rem;border-radius:999px;border:1px solid rgba(244,238,229,.4);transition:background-color .2s ease,transform .45s var(--ease)}
+.guide-toggle::before,.guide-toggle::after{content:"";position:absolute;left:50%;top:50%;width:18px;height:1.5px;margin:-.75px 0 0 -9px;background:currentColor}
+.guide-toggle::after{transform:rotate(90deg)}
+.guide-box[open] .guide-toggle{transform:rotate(135deg);background:var(--terra);border-color:var(--terra)}
+@media (hover:hover) and (pointer:fine){.guide-box>summary:hover .guide-toggle{background:rgba(244,238,229,.1)}.guide-box[open]>summary:hover .guide-toggle{background:var(--terra-deep)}}
+.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem);background:var(--card);color:var(--ink);border-radius:24px;padding:clamp(1.3rem,3.5vw,2.75rem);box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.guide h3{font-size:var(--fs-h3);color:var(--green);padding-bottom:.9rem;border-bottom:2px solid var(--green)}
+.rules{list-style:none;margin:0 0 1.2rem;padding:0;counter-reset:regla;display:grid;gap:1.1rem}
+.rules li{position:relative;padding-left:2.5rem;font-size:var(--fs-small);color:var(--ink-soft);counter-increment:regla;line-height:1.5}
+.rules li::before{content:counter(regla);position:absolute;left:0;top:.05rem;width:1.65rem;height:1.65rem;border-radius:50%;background:var(--terra);color:#fff;font:700 .8125rem/1.65rem var(--sans);text-align:center}
+.rules b{display:block;color:var(--ink);font-weight:700;font-size:1rem;margin-bottom:.1rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.05rem 0;font-weight:700;font-size:1.0625rem;color:var(--ink);transition:color .2s ease}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:1.75rem;height:1.75rem;border-radius:50%;background:var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='%232f4a3a'%3E%3Cpath d='M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z'/%3E%3C/svg%3E") center/.9rem no-repeat;transition:transform .3s var(--ease),background-color .2s ease}
+.faq details[open]>summary{color:var(--terra-deep)}
+.faq details[open]>summary::after{transform:rotate(45deg);background-color:#f1d6cb}
+@media (hover:hover) and (pointer:fine){.faq summary:hover{color:var(--terra-deep)}}
+.faq details>:not(summary){padding-bottom:1.15rem}
+.faq details p{font-size:var(--fs-small);color:var(--ink-soft);line-height:1.6}
+.faq a{color:var(--terra-deep);font-weight:700}
+.faq details::details-content{block-size:0;overflow:clip;transition:block-size .35s var(--ease),content-visibility .35s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
+.wifi{display:flex;gap:1.25rem;align-items:center}
+.wifi img{width:150px;flex:none;border-radius:12px;border:1px solid var(--line)}
+.wifi b{color:var(--ink)}
+@media (max-width:960px){.guide{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.wifi{flex-direction:column;align-items:flex-start}.wifi img{width:200px}.guide-toggle{width:3rem;height:3rem}}
+
+/* ---------- pie ---------- */
+footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
+.foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem 3rem;align-items:end}
+.foot .brand{font-size:clamp(2.2rem,1.6rem + 2.5vw,3.6rem)}
+.foot p{margin-top:.8rem;color:var(--muted);font-size:var(--fs-small)}
+.foot-links{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;font-weight:600}
+.foot-links a{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+.foot-links .ic{width:1.3em;height:1.3em;color:var(--green)}
+@media (hover:hover) and (pointer:fine){.foot-links a:hover{color:var(--terra-deep)}}
+.pay{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem 2rem;margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.6rem;border-top:1px solid var(--line)}
+.pay h2{font-size:var(--fs-small);font-weight:700;letter-spacing:0;color:var(--muted)}
+.pay-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.pay-list li{display:inline-flex;align-items:center;gap:.5rem;height:2.6rem;padding:0 .95rem;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:var(--fs-small);font-weight:600;color:var(--ink-soft)}
+.pay-list svg{width:1.35rem;height:1.35rem}
+.pay-list .visa svg{width:2.6rem;height:1.7rem;color:#1a1f71}
+.pay-list .airbnb svg{color:#ff5a5f}
+.pay-list .booking b{font-weight:800;color:#003580;letter-spacing:-.02em}
+.pay-list .booking b span{color:#0071c2}
+.legal{margin-top:1.4rem;font-size:var(--fs-label);color:var(--muted)}
+@media (max-width:720px){.foot{grid-template-columns:1fr}}
+
+/* ---------- movimiento ---------- */
+@keyframes rise{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes unveil{from{clip-path:inset(12% 0 0 0 round var(--r-media));transform:scale(1.06)}to{clip-path:inset(0 0 0 0 round var(--r-media));transform:none}}
+@keyframes settle{from{transform:scale(1.08)}to{transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .hero .line>span{animation:rise .9s var(--ease) both}
+  .hero .line:nth-child(2)>span{animation-delay:.08s}
+  .hero .line:nth-child(3)>span{animation-delay:.16s}
+  .hero-kicker{animation:fade-up .7s var(--ease) both}
+  .hero-sub{animation:fade-up .8s var(--ease) .32s both}
+  .hero .ctas{animation:fade-up .8s var(--ease) .42s both}
+  .hero-main{animation:unveil 1.3s var(--ease) .05s both}
+  .hero-main img{animation:settle 1.8s var(--ease) both}
+  .hero-inset{animation:fade-up 1s var(--ease) .55s both}
+  @media (max-width:860px){.hero-main{animation:none}.hero-main img{animation:settle 2s var(--ease) both}}
+  /* aparición al hacer scroll: solo fotos y listas, una vez */
+  .js .reveal-img{clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--ease-io)}
+  .js .reveal-img.in{clip-path:inset(0 0 0 0)}
+  .js .reveal-list>*{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .js .reveal-list.in>*{opacity:1;transform:none}
+  .js .reveal-list.in>*:nth-child(2){transition-delay:.06s}
+  .js .reveal-list.in>*:nth-child(3){transition-delay:.12s}
+  .js .reveal-list.in>*:nth-child(4){transition-delay:.18s}
+  .js .reveal-list.in>*:nth-child(5){transition-delay:.24s}
+  .js .reveal-list.in>*:nth-child(6){transition-delay:.3s}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="#inicio">Casa <em>Peña</em></a>
+    <a class="brand" href="#inicio" aria-label="Casa Peña, inicio">Casa <em>Peña</em></a>
     <nav class="nav" aria-label="Principal">
       <a href="#departamento">Fotos</a>
       <a href="#comodidades">Características</a>
@@ -283,144 +393,134 @@ footer a{color:var(--ink)}
       <a href="#disponibilidad">Calendario</a>
       <a href="#guia">Guía</a>
     </nav>
-    <a class="btn small" href="#reservar">Reservar</a>
+    <a class="btn" href="#disponibilidad">Ver disponibilidad</a>
   </div>
 </header>
 
 <main id="inicio">
-  <section class="banner">
-    <img class="banner-bg" src="fotos/vista-calle.jpg" alt="" width="900" height="1600" fetchpriority="high">
+  <section class="hero" aria-labelledby="titulo">
     <div class="wrap">
-      <p class="meta">Rodríguez Peña 223 · Centro · Buenos Aires</p>
-      <h1>Tu casa en el <em>corazón</em> de Buenos Aires</h1>
-    </div>
-  </section>
-
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="lead">Un departamento luminoso, cálido y completamente equipado en el centro histórico de Buenos Aires: a 2 cuadras de la Avenida Corrientes y su zona de teatros, cerca del Congreso y del Obelisco, rodeado de bares notables y restaurantes. Ideal para familias y grupos de hasta cinco personas.</p>
+      <div class="hero-copy">
+        <p class="hero-kicker">Rodríguez Peña 223, Buenos Aires</p>
+        <h1 id="titulo"><span class="line"><span>Tu casa en el</span></span><span class="line"><span><em>corazón</em> de</span></span><span class="line"><span>Buenos Aires</span></span></h1>
+        <p class="hero-sub">Un departamento luminoso para hasta cinco personas, a dos cuadras de la Avenida Corrientes.</p>
         <div class="ctas">
-          <a class="btn" href="#disponibilidad">Ver fechas disponibles</a>
-          <a class="btn ghost" href="#departamento">Ver fotos</a>
-          <a class="btn airbnb" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">Reservar en Airbnb <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="facts">
-          <div><b>5</b><span>huéspedes</span></div>
-          <div><b>2</b><span>cuadras de Av. Corrientes</span></div>
-          <div><b>A/A</b><span>frío / calor</span></div>
+          <a class="btn" href="#disponibilidad">Ver disponibilidad</a>
+          <a class="btn btn-line" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">Reservar en Airbnb <svg class="ic ic-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
         </div>
       </div>
-      <div class="collage">
-        <figure><img src="fotos/dormitorio.jpg" alt="Dormitorio con cama doble, ropa blanca y vista a los techos franceses de Buenos Aires" width="900" height="1600"><figcaption>El dormitorio</figcaption></figure>
-        <figure><img src="fotos/vista-atardecer.jpg" alt="Atardecer sobre los edificios de estilo francés, visto desde la ventana" width="900" height="1599"><figcaption>La vista al atardecer</figcaption></figure>
-        <div class="stamp"><b>En la zona de teatros</b>Bares notables y cultura a la vuelta</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec dark" id="recorrido">
-    <div class="wrap tour">
-      <div class="sec-head">
-        <div>
-          <p class="meta">01 — Recorrido</p>
-          <h2>Conoce Casa Peña <em>por dentro</em></h2>
-        </div>
-        <p>Un recorrido corto por el departamento: el living, la cocina, el dormitorio con vista a los techos de la ciudad y el atardecer desde la ventana.</p>
-        <a class="btn" href="#disponibilidad">Consultar fechas</a>
-      </div>
-      <figure class="tour-video">
-        <video id="tour" src="video/casa-pena-recorrido.mp4" poster="video/casa-pena-recorrido-poster.jpg" width="720" height="1280" muted loop playsinline controls preload="none" aria-label="Video recorriendo el departamento Casa Peña"></video>
+      <figure class="hero-media">
+        <div class="hero-main"><img src="fotos/vista-calle.jpg" alt="Vista desde el departamento a una calle con edificios de estilo francés" width="900" height="1600" fetchpriority="high"></div>
+        <div class="hero-inset"><img src="fotos/dormitorio.jpg" alt="Dormitorio con cama doble y vista a los techos de la ciudad" width="900" height="1600"></div>
       </figure>
     </div>
   </section>
 
-  <section class="sec alt" id="departamento">
+  <section class="intro" aria-label="El departamento en pocas palabras">
     <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">02 — El departamento</p>
-          <h2>Pensado para <em>sentirse en casa</em></h2>
-        </div>
+      <div>
+        <p class="statement">Un departamento luminoso, cálido y completamente equipado en el centro histórico de Buenos Aires: <strong>a 2 cuadras de la Avenida Corrientes</strong> y su zona de teatros, cerca del Congreso y del Obelisco, rodeado de bares notables y restaurantes. Ideal para familias y grupos de hasta cinco personas.</p>
+        <ul class="quick">
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></svg>Hasta 5 huéspedes</li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></svg>Aire frío y calor</li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></svg>Wi-Fi y Chromecast</li>
+        </ul>
+      </div>
+      <figure class="reveal-img"><img src="fotos/vista-atardecer.jpg" alt="Atardecer sobre los edificios de estilo francés, visto desde la ventana" width="900" height="1599" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sec dark" id="recorrido" aria-labelledby="t-recorrido">
+    <div class="wrap tour">
+      <figure class="tour-video">
+        <video id="tour" src="video/casa-pena-recorrido.mp4" poster="video/casa-pena-recorrido-poster.jpg" width="720" height="1280" muted loop playsinline controls preload="none" aria-label="Video recorriendo el departamento Casa Peña"></video>
+      </figure>
+      <div class="head">
+        <h2 id="t-recorrido">Conoce Casa Peña <em>por dentro</em></h2>
+        <p>Un recorrido corto por el departamento: el living, la cocina, el dormitorio con vista a los techos de la ciudad y el atardecer desde la ventana.</p>
+        <a class="btn btn-light" href="#disponibilidad">Ver disponibilidad</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tint" id="departamento" aria-labelledby="t-fotos">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="t-fotos">Pensado para <em>sentirse en casa</em></h2>
         <p>Dormitorio con cama doble y vista a los techos de la ciudad, living con sofá cama doble y cama sencilla, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
       </div>
       <div class="gallery" id="gallery">
-        <button class="g-big" data-i="0"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
-        <button class="g-tall" data-i="1"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
-        <button data-i="2"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama doble gris con espejos redondos" loading="lazy"></button>
-        <button data-i="3"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
-        <button class="g-wide" data-i="4"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
-        <button class="g-tall" data-i="5"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
-        <button data-i="6"><img src="fotos/bano.jpg" alt="Baño con bacha de apoyo y eucalipto" loading="lazy"></button>
-        <button data-i="7"><img src="fotos/dormitorio-atardecer.jpg" alt="Dormitorio al atardecer" loading="lazy"></button>
-        <button data-i="8"><img src="fotos/comedor-living.jpg" alt="Mesa puesta con vista al living" loading="lazy"></button>
-        <button data-i="9"><img src="fotos/cafetera.jpg" alt="Cafetera espresso en la cocina" loading="lazy"></button>
-        <button class="g-wide" data-i="10"><img src="fotos/sofa-comedor.jpg" alt="Living integrado con el comedor" loading="lazy"></button>
-        <button data-i="11"><img src="fotos/cocina.jpg" alt="Cocina con horno, anafe eléctrico y bacha doble" loading="lazy"></button>
-        <button data-i="12"><img src="fotos/living-tv.jpg" alt="Living con TV y mesa ratona" loading="lazy"></button>
+        <button class="g-big reveal-img" data-i="0" aria-label="Ver foto: living"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
+        <button class="g-tall reveal-img" data-i="1" aria-label="Ver foto: dormitorio"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
+        <button class="reveal-img" data-i="2" aria-label="Ver foto: sofá cama"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama doble gris con espejos redondos" loading="lazy"></button>
+        <button class="reveal-img" data-i="3" aria-label="Ver foto: mueble de TV"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
+        <button class="g-wide reveal-img" data-i="4" aria-label="Ver foto: cocina y comedor"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
+        <button class="g-tall reveal-img" data-i="5" aria-label="Ver foto: pasillo"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
+        <button class="reveal-img" data-i="6" aria-label="Ver foto: baño"><img src="fotos/bano.jpg" alt="Baño con bacha de apoyo y eucalipto" loading="lazy"></button>
+        <button class="reveal-img" data-i="7" aria-label="Ver foto: dormitorio al atardecer"><img src="fotos/dormitorio-atardecer.jpg" alt="Dormitorio al atardecer" loading="lazy"></button>
+        <button class="reveal-img" data-i="8" aria-label="Ver foto: comedor"><img src="fotos/comedor-living.jpg" alt="Mesa puesta con vista al living" loading="lazy"></button>
+        <button class="reveal-img" data-i="9" aria-label="Ver foto: cafetera"><img src="fotos/cafetera.jpg" alt="Cafetera espresso en la cocina" loading="lazy"></button>
+        <button class="g-wide reveal-img" data-i="10" aria-label="Ver foto: living y comedor"><img src="fotos/sofa-comedor.jpg" alt="Living integrado con el comedor" loading="lazy"></button>
+        <button class="reveal-img" data-i="11" aria-label="Ver foto: cocina"><img src="fotos/cocina.jpg" alt="Cocina con horno, anafe eléctrico y bacha doble" loading="lazy"></button>
+        <button class="reveal-img" data-i="12" aria-label="Ver foto: living con TV"><img src="fotos/living-tv.jpg" alt="Living con TV y mesa ratona" loading="lazy"></button>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="comodidades">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">03 — Características</p>
-          <h2>Todo listo para <em>tu estadía</em></h2>
+  <section class="sec" id="comodidades" aria-labelledby="t-carac">
+    <div class="wrap feat-wrap">
+      <figure class="feat-media reveal-img"><img src="fotos/comedor-living.jpg" alt="Mesa puesta con vista al living" width="1448" height="1086" loading="lazy"></figure>
+      <div>
+        <div class="head">
+          <h2 id="t-carac">Todo listo para <em>tu estadía</em></h2>
         </div>
-      </div>
-      <div class="amen">
-        <div><svg viewBox="0 0 24 24"><path d="M3 18v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M3 14h18M5 9V6h14v3M3 18v2M21 18v2"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con un sofá cama doble grande y una cama sencilla. 1 baño completo.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M4 4h16v6H4zM7 14c0 2-1 3-1 5M12 14v5M17 14c0 2 1 3 1 5"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0M2 8.5a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series favoritas.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M5 21V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v13M5 13h14M9 9.5h.01M15 9.5h.01M3 21h18"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M6 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM17 9h1.5a2.5 2.5 0 0 1 0 5H17M9 2v3M12 2v3"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></div>
-        <div><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Ropa blanca y básicos</h3><p>Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo.</p></div>
+        <ul class="feats reveal-list">
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con un sofá cama doble grande y una cama sencilla. 1 baño completo.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series favoritas.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M88,48V16a8,8,0,0,1,16,0V48a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,128,56Zm32,0a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,160,56Zm92.8,46.4L224,124v60a32,32,0,0,1-32,32H64a32,32,0,0,1-32-32V124L3.2,102.4a8,8,0,0,1,9.6-12.8L32,104V80a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8v24l19.2-14.4a8,8,0,0,1,9.6,12.8ZM208,88H48v96a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16Z"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M64,236a12,12,0,1,1-12-12A12,12,0,0,1,64,236Zm20-44a12,12,0,1,0,12,12A12,12,0,0,0,84,192Zm-64,0a12,12,0,1,0,12,12A12,12,0,0,0,20,192Zm32-32a12,12,0,1,0,12,12A12,12,0,0,0,52,160ZM256,40a8,8,0,0,1-8,8H219.31L191.46,75.86,169.8,202.65a16,16,0,0,1-27.09,8.66l-98-98a16,16,0,0,1,8.69-27.1L180.14,64.54l30.2-30.2A8,8,0,0,1,216,32h32A8,8,0,0,1,256,40ZM174.21,81.79,56,102l98,98Z"/></svg><h3>Ropa blanca y básicos</h3><p>Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo.</p></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="sec dark" id="ubicacion">
+  <section class="sec dark" id="ubicacion" aria-labelledby="t-ubic">
     <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">04 — Ubicación</p>
-          <h2>Buenos Aires, <em>a pie</em></h2>
-        </div>
+      <div class="head">
+        <h2 id="t-ubic">Buenos Aires, <em>a pie</em></h2>
         <p>Rodríguez Peña 223, en pleno centro histórico. Una de las zonas más vivas de la ciudad: teatros, librerías, pizzerías de siempre, bares notables y arquitectura de otra época, todo a pocas cuadras.</p>
       </div>
       <div class="loc">
-        <ul class="places">
-          <li><span class="n">3 min</span><h3>Avenida Corrientes</h3><p>A 2 cuadras: la calle de los teatros, las librerías y las pizzerías clásicas.</p></li>
-          <li><span class="n">7 min</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
-          <li><span class="n">13 min</span><h3>Palacio de Aguas Corrientes</h3><p>Una de las fachadas más lindas de la ciudad, con 300.000 piezas de cerámica.</p></li>
-          <li><span class="n">15 min</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
-          <li><span class="n">15 min</span><h3>Teatro Colón</h3><p>Uno de los grandes teatros líricos del mundo, con visitas guiadas.</p></li>
+        <ul class="places reveal-list">
+          <li><span class="n">3<small>min</small></span><h3>Avenida Corrientes</h3><p>A 2 cuadras: la calle de los teatros, las librerías y las pizzerías clásicas.</p></li>
+          <li><span class="n">7<small>min</small></span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
+          <li><span class="n">13<small>min</small></span><h3>Palacio de Aguas Corrientes</h3><p>Una de las fachadas más lindas de la ciudad, con 300.000 piezas de cerámica.</p></li>
+          <li><span class="n">15<small>min</small></span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
+          <li><span class="n">15<small>min</small></span><h3>Teatro Colón</h3><p>Uno de los grandes teatros líricos del mundo, con visitas guiadas.</p></li>
         </ul>
-        <figure class="loc-img" style="margin:0">
-          <img src="fotos/vista-calle.jpg" alt="Vista desde el departamento a una calle con edificios de estilo francés" loading="lazy">
-          <figcaption>La vista desde Casa Peña</figcaption>
-        </figure>
+        <div class="map">
+          <iframe title="Mapa: Casa Peña en Rodríguez Peña 223, Buenos Aires" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed"></iframe>
+        </div>
       </div>
-      <div class="map">
-        <iframe title="Mapa: Casa Peña en Rodríguez Peña 223, Buenos Aires" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires%2C%20Argentina&amp;z=15&amp;output=embed"></iframe>
-      </div>
-      <p class="loc-note">Minutos caminando, aproximados. <a href="https://www.google.com/maps/search/?api=1&amp;query=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires" target="_blank" rel="noopener">Abrir en Google Maps ↗</a></p>
+      <p class="loc-note">Minutos caminando, aproximados. <a href="https://www.google.com/maps/search/?api=1&amp;query=Rodr%C3%ADguez%20Pe%C3%B1a%20223%2C%20Buenos%20Aires" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"/></svg>Abrir en Google Maps</a></p>
     </div>
   </section>
 
-  <section class="sec" id="cerca">
+  <section class="sec" id="cerca" aria-labelledby="t-cerca">
     <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">05 — Qué hay cerca</p>
-          <h2>Todo a <em>pocos pasos</em></h2>
-        </div>
+      <div class="head">
+        <h2 id="t-cerca">Todo a <em>pocos pasos</em></h2>
         <p>Desde la puerta llegas caminando a los íconos de la ciudad, a los cafés de siempre y a la cartelera porteña. Tiempos aproximados, a paso tranquilo.</p>
       </div>
+      <div class="tabs" role="tablist" aria-label="Lugares cercanos">
+        <button type="button" role="tab" id="tab-0" aria-controls="near-0" aria-selected="true">Íconos</button>
+        <button type="button" role="tab" id="tab-1" aria-controls="near-1" aria-selected="false" tabindex="-1">Bares</button>
+        <button type="button" role="tab" id="tab-2" aria-controls="near-2" aria-selected="false" tabindex="-1">Teatros y paseos</button>
+      </div>
       <div class="near">
-        <div class="near-col">
+        <div class="near-col on" id="near-0" role="tabpanel" aria-labelledby="tab-0">
           <h3>Íconos de la ciudad</h3>
           <ul>
             <li><b>Congreso de la Nación</b><span>El Palacio del Congreso y su plaza, con el Kilómetro Cero.</span><i>7 min</i></li>
@@ -431,7 +531,7 @@ footer a{color:var(--ink)}
             <li><b>Plaza de Mayo y Casa Rosada</b><span>Por la Avenida de Mayo, pasando por cafés históricos.</span><i>25 min</i></li>
           </ul>
         </div>
-        <div class="near-col">
+        <div class="near-col" id="near-1" role="tabpanel" aria-labelledby="tab-1">
           <h3>Bares notables y pizzerías</h3>
           <ul>
             <li><b>El Gato Negro</b><span>Av. Corrientes 1669. Café y almacén de especias de otra época.</span><i>4 min</i></li>
@@ -442,7 +542,7 @@ footer a{color:var(--ink)}
             <li><b>Café Tortoni</b><span>Av. de Mayo 825. El café más antiguo de la ciudad.</span><i>18 min</i></li>
           </ul>
         </div>
-        <div class="near-col">
+        <div class="near-col" id="near-2" role="tabpanel" aria-labelledby="tab-2">
           <h3>Teatros y paseos</h3>
           <ul>
             <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3 min</i></li>
@@ -458,33 +558,30 @@ footer a{color:var(--ink)}
     </div>
   </section>
 
-  <section class="sec alt" id="disponibilidad">
+  <section class="sec tint" id="disponibilidad" aria-labelledby="t-cal">
     <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="meta">06 — Calendario y reserva</p>
-          <h2>Elige tus <em>fechas</em></h2>
-        </div>
+      <div class="head">
+        <h2 id="t-cal">Elige tus <em>fechas</em></h2>
         <p>Toca el día de llegada y luego el de salida en el calendario. Las fechas se completan solas en el formulario.</p>
       </div>
       <div class="book">
         <div class="panel">
           <div class="cal-nav">
-            <button type="button" id="prev" aria-label="Meses anteriores">‹</button>
-            <span class="meta" id="cal-range"></span>
-            <button type="button" id="next" aria-label="Meses siguientes">›</button>
+            <button type="button" id="prev" aria-label="Meses anteriores"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+            <span id="cal-range" aria-live="polite"></span>
+            <button type="button" id="next" aria-label="Meses siguientes"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></button>
           </div>
           <div class="months" id="months"></div>
           <div class="legend">
             <span><i style="background:var(--green-soft)"></i>Disponible</span>
-            <span><i style="background:repeating-linear-gradient(135deg,#efd9cf 0 3px,#e7cbbf 3px 6px)"></i>Reservado</span>
+            <span><i style="background:repeating-linear-gradient(135deg,#f0dbd1 0 3px,#e8cdc1 3px 6px)"></i>Reservado</span>
             <span><i style="background:var(--green)"></i>Tu selección</span>
           </div>
           <p class="cal-msg" id="cal-msg" aria-live="polite"></p>
         </div>
 
         <form class="panel" id="reservar" novalidate>
-          <h3 style="font-size:1.75rem;margin-bottom:1.1rem">Solicitar reserva</h3>
+          <h3 class="form-title">Solicitar reserva</h3>
           <div class="row">
             <div class="f"><label for="in">Llegada</label><input type="date" id="in" name="entrada" required></div>
             <div class="f"><label for="out">Salida</label><input type="date" id="out" name="salida" required></div>
@@ -498,26 +595,26 @@ footer a{color:var(--ink)}
           </div>
           <div class="row">
             <div class="f"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-            <div class="f"><label for="phone">WhatsApp / teléfono</label><input type="tel" id="phone" name="telefono" autocomplete="tel" required></div>
+            <div class="f"><label for="phone">WhatsApp o teléfono</label><input type="tel" id="phone" name="telefono" autocomplete="tel" required></div>
           </div>
-          <div class="f"><label for="msg">Mensaje (opcional)</label><textarea id="msg" name="mensaje" placeholder="Hora estimada de llegada, motivo del viaje, preguntas…"></textarea></div>
-          <button class="btn" type="submit" style="width:100%">Enviar solicitud de reserva</button>
+          <div class="f"><label for="msg">Mensaje (opcional)</label><textarea id="msg" name="mensaje" placeholder="Hora estimada de llegada, motivo del viaje, preguntas"></textarea></div>
+          <button class="btn btn-block" type="submit">Enviar solicitud</button>
           <p class="form-msg" id="form-msg" aria-live="polite"></p>
           <p class="fine">Tu solicitud llega directo al anfitrión, que te confirma disponibilidad, precio y forma de pago. La reserva queda firme una vez confirmada.</p>
           <div class="or"><span>o si prefieres</span></div>
-          <a class="btn airbnb" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener" style="width:100%">Reservar en Airbnb <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-accent btn-block" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">Reservar en Airbnb <svg class="ic ic-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
           <p class="fine" style="text-align:center">Pago y reserva protegidos por Airbnb.</p>
         </form>
       </div>
     </div>
   </section>
+
   <section class="sec dark" id="guia">
     <div class="wrap">
       <details class="guide-box" id="guia-box">
         <summary>
           <span>
-            <span class="meta">07 — Para huéspedes</span>
-            <span class="guide-title">Guía para <em>huéspedes</em></span>
+            <span class="guide-title" role="heading" aria-level="2">Guía para <em>huéspedes</em></span>
             <span class="guide-sub">Normas de la casa, Wi-Fi, cómo usar cada cosa y preguntas frecuentes.</span>
           </span>
           <span class="guide-toggle" aria-hidden="true"></span>
@@ -599,34 +696,62 @@ footer a{color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span class="brand">Casa <em>Peña</em></span>
-    <span>Departamento temporario · Centro de Buenos Aires · Hasta 5 huéspedes</span>
-    <a href="https://wa.me/5491125546238" target="_blank" rel="noopener">WhatsApp: 11 2554-6238</a>
-  </div>
-  <div class="wrap pay">
-    <span class="meta">Medios de pago y reserva</span>
-    <ul class="pay-list">
-      <li><span class="pay-ico"><svg viewBox="0 0 32 20" aria-hidden="true"><rect x="1" y="2" width="30" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="10" r="3.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 6v.01M26 14v.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>Efectivo</li>
-      <li><span class="pay-ico"><svg viewBox="0 0 32 20" aria-hidden="true"><rect x="1" y="1.5" width="30" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1 6.5h30" stroke="currentColor" stroke-width="2.6"/><path d="M5 13.5h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Crédito y débito</li>
-      <li><span class="pay-ico brand visa">VISA</span>Visa</li>
-      <li><span class="pay-ico brand"><svg viewBox="0 0 32 20" aria-hidden="true"><circle cx="12" cy="10" r="7" fill="#eb001b"/><circle cx="20" cy="10" r="7" fill="#f79e1b"/><path d="M16 4.3a7 7 0 0 1 0 11.4 7 7 0 0 1 0-11.4z" fill="#ff5f00"/></svg></span>Mastercard</li>
-      <li><a class="pay-ico brand airbnb-b" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">airbnb</a>Airbnb</li>
-      <li><span class="pay-ico brand booking-b">Booking<span>.com</span></span>Booking</li>
-    </ul>
+    <div class="foot">
+      <div>
+        <span class="brand">Casa <em>Peña</em></span>
+        <p>Departamento temporario en el centro de Buenos Aires, para hasta 5 huéspedes.</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://wa.me/5491125546238" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></svg>WhatsApp 11 2554-6238</a>
+        <a href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>Casa Peña en Airbnb</a>
+      </div>
+    </div>
+    <div class="pay">
+      <h2>Medios de pago y reserva</h2>
+      <ul class="pay-list">
+        <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M128,88a40,40,0,1,0,40,40A40,40,0,0,0,128,88Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM240,56H16a8,8,0,0,0-8,8V192a8,8,0,0,0,8,8H240a8,8,0,0,0,8-8V64A8,8,0,0,0,240,56ZM193.65,184H62.35A56.78,56.78,0,0,0,24,145.65v-35.3A56.78,56.78,0,0,0,62.35,72h131.3A56.78,56.78,0,0,0,232,110.35v35.3A56.78,56.78,0,0,0,193.65,184ZM232,93.37A40.81,40.81,0,0,1,210.63,72H232ZM45.37,72A40.81,40.81,0,0,1,24,93.37V72ZM24,162.63A40.81,40.81,0,0,1,45.37,184H24ZM210.63,184A40.81,40.81,0,0,1,232,162.63V184Z"/></svg>Efectivo</li>
+        <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"/></svg>Crédito y débito</li>
+        <li class="visa"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg><span class="sr">Visa</span></li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="6.2" fill="#eb001b"/><circle cx="15" cy="12" r="6.2" fill="#f79e1b"/><path d="M12 6.8a6.2 6.2 0 0 1 0 10.4 6.2 6.2 0 0 1 0-10.4z" fill="#ff5f00"/></svg>Mastercard</li>
+        <li class="airbnb"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></svg>Airbnb</li>
+        <li class="booking"><b>Booking<span>.com</span></b></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
-<dialog class="lb" id="lb">
+<dialog class="lb" id="lb" aria-label="Fotos del departamento">
   <img id="lb-img" alt="">
   <div class="lb-bar">
-    <button type="button" id="lb-prev">‹ Anterior</button>
     <span id="lb-count"></span>
-    <button type="button" id="lb-next">Siguiente ›</button>
-    <button type="button" id="lb-close">Cerrar ✕</button>
+    <div>
+      <button type="button" class="icon-btn" id="lb-prev" aria-label="Foto anterior"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+      <button type="button" class="icon-btn" id="lb-next" aria-label="Foto siguiente"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></button>
+      <button type="button" class="icon-btn" id="lb-close" aria-label="Cerrar"><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button>
+    </div>
   </div>
 </dialog>
 
 <script>
+/* encabezado: sombra al bajar */
+(() => {
+  const top = document.getElementById('top');
+  const s = document.createElement('div');
+  s.style.cssText = 'position:absolute;top:0;height:8px;width:1px;pointer-events:none';
+  document.body.prepend(s);
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => top.classList.toggle('scrolled', !e.isIntersecting)).observe(s);
+})();
+
+/* aparición de fotos y listas al entrar en pantalla (una sola vez) */
+(() => {
+  const els = document.querySelectorAll('.reveal-img, .reveal-list');
+  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el => io.observe(el));
+})();
+
 /* video: se reproduce con sonido al 50% cuando entra en pantalla y se pausa al salir.
    Los navegadores bloquean el sonido automático hasta que la persona toca la página:
    en ese caso arranca mudo y el sonido se activa al primer toque, clic o tecla. */
@@ -656,6 +781,23 @@ footer a{color:var(--ink)}
   }, { threshold: .5 }).observe(v);
 })();
 
+/* qué hay cerca: pestañas en celular */
+(() => {
+  const tabs = [...document.querySelectorAll('.tabs [role="tab"]')];
+  const select = t => tabs.forEach(b => {
+    const on = b === t;
+    b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+    document.getElementById(b.getAttribute('aria-controls')).classList.toggle('on', on);
+  });
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => select(b));
+    b.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus(); }
+    });
+  });
+})();
+
 /* guía: se abre al llegar desde el menú o con #guia */
 (() => {
   const box = document.getElementById('guia-box');
@@ -673,12 +815,12 @@ footer a{color:var(--ink)}
     if (!e.isIntersecting) return;
     links.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
     const a = links.find(a => a.hash === '#' + e.target.id);
-    if (a && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - 16, behavior: 'smooth' });
+    if (a && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - 24, behavior: 'smooth' });
   }), { rootMargin: '-45% 0px -50% 0px' });
   links.forEach(a => { const el = document.querySelector(a.hash); if (el) io.observe(el); });
 })();
 
-/* ===== CONFIGURACIÓN — completa estos datos =====
+/* ===== CONFIGURACIÓN =====
    whatsapp: número con código de país, sin + ni espacios (ej. Argentina: 5491112345678)
    email:    respaldo si no hay WhatsApp configurado */
 const CONFIG = {
@@ -688,23 +830,23 @@ const CONFIG = {
   minNoches: 1
 };
 
-/* ---------- galería ---------- */
+/* ---------- visor de fotos ---------- */
 (() => {
   const btns = [...document.querySelectorAll('#gallery button')];
   const lb = document.getElementById('lb'), img = document.getElementById('lb-img'), count = document.getElementById('lb-count');
   let i = 0;
-  const show = n => {
+  const show = (n, animate) => {
     i = (n + btns.length) % btns.length;
     const src = btns[i].querySelector('img');
-    img.src = src.src; img.alt = src.alt;
-    count.textContent = `${i + 1} / ${btns.length}`;
+    const apply = () => { img.src = src.src; img.alt = src.alt; count.textContent = `${i + 1} de ${btns.length}`; img.classList.remove('swap'); };
+    if (animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) { img.classList.add('swap'); setTimeout(apply, 180); } else apply();
   };
   btns.forEach((b, n) => b.addEventListener('click', () => { show(n); lb.showModal(); }));
-  document.getElementById('lb-prev').onclick = () => show(i - 1);
-  document.getElementById('lb-next').onclick = () => show(i + 1);
+  document.getElementById('lb-prev').onclick = () => show(i - 1, true);
+  document.getElementById('lb-next').onclick = () => show(i + 1, true);
   document.getElementById('lb-close').onclick = () => lb.close();
   lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
-  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') show(i - 1, true); if (e.key === 'ArrowRight') show(i + 1, true); });
 })();
 
 /* ---------- calendario de disponibilidad ---------- */
@@ -756,8 +898,11 @@ function render() {
     m.appendChild(g); $months.appendChild(m);
   }
   const last = new Date(view.getFullYear(), view.getMonth() + 1, 1);
-  document.getElementById('cal-range').textContent =
-    `${view.toLocaleDateString('es-AR', { month: 'short' })} – ${last.toLocaleDateString('es-AR', { month: 'short', year: 'numeric' })}`;
+  const wide = matchMedia('(min-width: 641px)').matches;
+  const range = wide
+    ? `${view.toLocaleDateString('es-AR', { month: 'long' })} y ${last.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' })}`
+    : view.toLocaleDateString('es-AR', { month: 'long', year: 'numeric' });
+  document.getElementById('cal-range').textContent = range.charAt(0).toUpperCase() + range.slice(1);
   document.getElementById('prev').disabled = view <= new Date(today.getFullYear(), today.getMonth(), 1);
 }
 
@@ -781,13 +926,14 @@ function syncForm() {
   if (selIn) $out.min = iso(addDays(parse(selIn), 1));
   if (selIn && selOut) {
     $sum.hidden = false;
-    $sum.innerHTML = `<b>${nights(selIn, selOut)} noches</b> · ${fmt(selIn)} → ${fmt(selOut)}`;
+    $sum.innerHTML = `<b>${nights(selIn, selOut)} noches</b>, del ${fmt(selIn)} al ${fmt(selOut)}`;
   } else $sum.hidden = true;
 }
 
 $months.addEventListener('click', e => { const b = e.target.closest('.d'); if (b && !b.disabled) pick(b.dataset.date); });
 document.getElementById('prev').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); };
 document.getElementById('next').onclick = () => { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); };
+matchMedia('(min-width: 641px)').addEventListener('change', render);
 
 function onInputs() {
   const a = $in.value, b = $out.value;
@@ -839,7 +985,7 @@ document.getElementById('reservar').addEventListener('submit', e => {
   if (CONFIG.whatsapp) {
     window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
   } else if (CONFIG.email) {
-    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Reserva Casa Peña · ${v.entrada} → ${v.salida}`)}&body=${encodeURIComponent(text.replace(/\*/g, ''))}`;
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`Reserva Casa Peña, ${v.entrada} al ${v.salida}`)}&body=${encodeURIComponent(text.replace(/\*/g, ''))}`;
   } else {
     return err('El contacto del anfitrión todavía no está configurado.');
   }
