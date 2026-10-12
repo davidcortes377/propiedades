@@ -104,6 +104,16 @@ section[id]{scroll-margin-top:72px}
 .dark .sec-head p{color:rgba(245,239,230,.82)}
 .dark .sec-head h2 em{color:#e8b39f}
 
+/* video */
+.tour{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:clamp(2rem,6vw,5rem);align-items:center}
+.tour .sec-head{margin-bottom:0;display:block}
+.tour .sec-head p{margin-top:1.4rem}
+.tour .btn{margin-top:2rem;background:var(--paper);color:var(--green)}
+.tour .btn:hover{background:#fff}
+.tour-video{margin:0;width:100%;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#203329;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.tour-video video{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width:820px){.tour{grid-template-columns:1fr}.tour-video{justify-self:center;width:min(100%,400px)}}
+
 /* gallery */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,240px);gap:12px}
 .gallery button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:14px;background:var(--paper-2)}
@@ -194,6 +204,7 @@ footer a{color:var(--ink)}
   <div class="wrap">
     <a class="brand" href="#inicio">Casa <em>Peña</em></a>
     <nav class="nav" aria-label="Principal">
+      <a href="#recorrido">Recorrido</a>
       <a href="#departamento">El departamento</a>
       <a href="#ubicacion">Ubicación</a>
       <a href="#disponibilidad">Disponibilidad</a>
@@ -234,11 +245,27 @@ footer a{color:var(--ink)}
     </div>
   </section>
 
+  <section class="sec dark" id="recorrido">
+    <div class="wrap tour">
+      <div class="sec-head">
+        <div>
+          <p class="meta">01 — Recorrido</p>
+          <h2>Conoce Casa Peña <em>por dentro</em></h2>
+        </div>
+        <p>Un recorrido corto por el departamento: el living, la cocina, el dormitorio con vista a los techos de la ciudad y el atardecer desde la ventana. Activa el sonido desde el video.</p>
+        <a class="btn" href="#disponibilidad">Consultar fechas</a>
+      </div>
+      <figure class="tour-video">
+        <video id="tour" src="video/casa-pena-recorrido.mp4" poster="video/casa-pena-recorrido-poster.jpg" width="720" height="1280" muted loop playsinline controls preload="none" aria-label="Video recorriendo el departamento Casa Peña"></video>
+      </figure>
+    </div>
+  </section>
+
   <section class="sec alt" id="departamento">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">01 — El departamento</p>
+          <p class="meta">02 — El departamento</p>
           <h2>Pensado para <em>sentirse en casa</em></h2>
         </div>
         <p>Living con sofá cama, comedor para compartir, cocina equipada, dormitorio con vista a la ciudad y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
@@ -265,7 +292,7 @@ footer a{color:var(--ink)}
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">02 — Comodidades</p>
+          <p class="meta">03 — Comodidades</p>
           <h2>Todo listo para <em>tu estadía</em></h2>
         </div>
       </div>
@@ -284,7 +311,7 @@ footer a{color:var(--ink)}
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">03 — Ubicación</p>
+          <p class="meta">04 — Ubicación</p>
           <h2>Buenos Aires, <em>a pie</em></h2>
         </div>
         <p>Una de las zonas más vivas y turísticas de la ciudad: teatros, librerías, pizzerías históricas y arquitectura de otra época, todo a pocas cuadras.</p>
@@ -311,7 +338,7 @@ footer a{color:var(--ink)}
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="meta">04 — Disponibilidad y reserva</p>
+          <p class="meta">05 — Disponibilidad y reserva</p>
           <h2>Elige tus <em>fechas</em></h2>
         </div>
         <p>Toca el día de llegada y luego el de salida en el calendario. Las fechas se completan solas en el formulario.</p>
@@ -378,6 +405,19 @@ footer a{color:var(--ink)}
 </dialog>
 
 <script>
+/* video: se reproduce sin sonido cuando entra en pantalla y se pausa al salir */
+(() => {
+  const v = document.getElementById('tour');
+  if (!v || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let userPaused = false;
+  v.addEventListener('pause', () => { if (!v.dataset.auto) userPaused = true; delete v.dataset.auto; });
+  v.addEventListener('play', () => { userPaused = false; });
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { if (!userPaused) v.play().catch(() => {}); }
+    else if (!v.paused) { v.dataset.auto = '1'; v.pause(); }
+  }, { threshold: .5 }).observe(v);
+})();
+
 /* ===== CONFIGURACIÓN — completa estos datos =====
    whatsapp: número con código de país, sin + ni espacios (ej. Argentina: 5491112345678)
    email:    respaldo si no hay WhatsApp configurado */
