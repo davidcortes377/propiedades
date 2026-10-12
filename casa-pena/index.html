@@ -191,21 +191,25 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .guide-toggle::after{transform:rotate(90deg)}
 .guide-box > summary:hover .guide-toggle{background:rgba(245,239,230,.1)}
 .guide-box[open] .guide-toggle{transform:rotate(45deg)}
-.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem)}
-.guide h3{font-size:1.5rem;padding-bottom:.9rem;border-bottom:1px solid rgba(245,239,230,.35)}
-.rules{list-style:none;margin:0 0 1rem;padding:0}
-.rules li{padding:.75rem 0;border-top:1px solid rgba(245,239,230,.12);font-size:.94rem;color:rgba(245,239,230,.8)}
-.rules b{display:block;color:var(--paper);font-weight:600;margin-bottom:.15rem}
-.faq details{border-bottom:1px solid rgba(245,239,230,.18)}
-.faq summary{list-style:none;cursor:pointer;padding:1rem 2rem 1rem 0;position:relative;font-weight:600}
+/* contenido de la guía: tarjeta clara con texto oscuro para leer cómodo */
+.guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:clamp(2rem,4vw,3rem);background:var(--card);color:var(--ink);border-radius:24px;padding:clamp(1.2rem,3.5vw,2.6rem);box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.guide h3{font-size:1.5rem;color:var(--green);padding-bottom:.9rem;border-bottom:2px solid var(--green)}
+.rules{list-style:none;margin:0 0 1.2rem;padding:0;counter-reset:regla}
+.rules li{position:relative;padding:.85rem 0 .85rem 2.4rem;border-top:var(--hair);font-size:.95rem;color:var(--ink-soft);counter-increment:regla}
+.rules li::before{content:counter(regla);position:absolute;left:0;top:.85rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--terra);color:#fff;font:700 .8rem/1.6rem var(--sans);text-align:center}
+.rules b{display:block;color:var(--ink);font-weight:700;margin-bottom:.15rem}
+.faq details{border-bottom:var(--hair)}
+.faq summary{list-style:none;cursor:pointer;padding:1rem 2.2rem 1rem 0;position:relative;font-weight:600;color:var(--ink);transition:color .2s}
+.faq summary:hover,.faq details[open] > summary{color:var(--terra-deep)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:0;top:.8rem;font:300 1.6rem/1 var(--sans);color:#e8b39f;transition:transform .25s var(--ease)}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 1.1rem;font-size:.94rem;color:rgba(245,239,230,.8)}
-.faq a{color:var(--paper)}
+.faq summary::after{content:"+";position:absolute;right:0;top:.75rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--green-soft);color:var(--green);font:400 1.2rem/1.55rem var(--sans);text-align:center;transition:transform .25s var(--ease),background .2s}
+.faq details[open] > summary::after{transform:rotate(45deg);background:var(--terra);color:#fff}
+.faq details p{padding:0 0 1.1rem;font-size:.95rem;color:var(--ink-soft)}
+.faq a{color:var(--terra-deep);font-weight:600}
 .wifi{display:flex;gap:1.2rem;align-items:center;padding-bottom:1.1rem}
-.wifi img{width:150px;flex:none;border-radius:12px}
+.wifi img{width:150px;flex:none;border-radius:12px;border:var(--hair)}
 .wifi p{padding:0!important}
+.wifi b{color:var(--ink)}
 @media (max-width:960px){.guide{grid-template-columns:1fr}}
 @media (max-width:480px){.wifi{flex-direction:column;align-items:flex-start}.wifi img{width:200px}.guide-toggle{width:44px;height:44px}}
 
