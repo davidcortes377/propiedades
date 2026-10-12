@@ -16,11 +16,10 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f4a3a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23f5efe6'%3ECP%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="../fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/bodoni-moda-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/urbanist-variable.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url("../fonts/inter-variable.woff2") format("woff2")}
-@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("../fonts/ibm-plex-mono-500.woff2") format("woff2")}
+@font-face{font-family:"Urbanist";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fonts/urbanist-variable.woff2") format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url("../fonts/bodoni-moda.woff2") format("woff2")}
 @font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url("../fonts/bodoni-moda-italic.woff2") format("woff2")}
 
@@ -30,28 +29,31 @@
   --terra:#b5604a;--terra-deep:#94472f;--green:#2f4a3a;--green-soft:#dfe6dd;
   --hair:1px solid rgba(29,26,23,.14);
   --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
-  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono","Courier New",monospace;
+  --sans:"Urbanist","Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;
+  --mono:var(--sans);
+  /* Bodoni Moda: tamaño óptico bajo = trazos finos más gruesos y legibles */
+  --serif-opsz:"opsz" 22;
   --gutter:clamp(16px,4vw,56px);
   --ease:cubic-bezier(.23,1,.32,1);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:500 1.125rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;width:100%;height:auto}
 a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;text-wrap:balance}
+h1,h2,h3{font-family:var(--sans);font-weight:600;margin:0;line-height:1.05;letter-spacing:-.025em;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
-em{font-family:var(--serif);font-style:italic}
+/* acentos: Bodoni Moda itálica, más gruesa y con tamaño óptico bajo para que los trazos finos no se vean borrados */
+em{font-family:var(--serif);font-style:italic;font-weight:600;font-variation-settings:var(--serif-opsz);font-size:1.06em;letter-spacing:-.01em}
 :focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter)}
-.meta{font:500 .74rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.meta{font:700 .76rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}
 section[id]{scroll-margin-top:72px}
 
 /* header */
 .top{position:sticky;top:0;z-index:50;background:rgba(245,239,230,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:var(--hair)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
-.brand{font:400 1.5rem/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.brand{font:600 1.5rem/1 var(--sans);text-decoration:none;letter-spacing:-.03em}
 .brand em{color:var(--terra)}
 .nav{display:flex;gap:1.4rem;font-size:.9rem;position:relative}
 .nav a{text-decoration:none;color:var(--ink-soft)}
@@ -86,19 +88,19 @@ section[id]{scroll-margin-top:72px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .hero .lead{font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--ink-soft);max-width:34rem;margin-top:0}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-.facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:.6rem 2rem;margin-top:2.6rem;padding-top:1.6rem;border-top:var(--hair)}
-.facts b{display:block;font:400 1.8rem/1 var(--serif)}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:.6rem 2rem;margin-top:2.6rem;padding-top:1.6rem;border-top:var(--hair)}
+.facts b{display:block;font:600 1.9rem/1 var(--sans);letter-spacing:-.03em}
 .facts span{font-size:.82rem;color:var(--muted)}
 .collage{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
 .collage figure{margin:0;position:relative;border-radius:20px;overflow:hidden;aspect-ratio:9/15;box-shadow:0 30px 60px -30px rgba(29,26,23,.5)}
 .collage figure img{width:100%;height:100%;object-fit:cover}
 .collage figure:nth-child(2){margin-top:14%}
-.collage figcaption{position:absolute;left:10px;bottom:10px;font:500 .68rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--paper);background:rgba(24,21,18,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.5rem .7rem;border-radius:999px}
+.collage figcaption{position:absolute;left:10px;bottom:10px;font:700 .68rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--paper);background:rgba(24,21,18,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.5rem .7rem;border-radius:999px}
 .stamp{position:absolute;left:-18px;bottom:22px;background:var(--card);border-radius:14px;padding:.85rem 1.1rem;box-shadow:0 18px 40px -20px rgba(29,26,23,.45);font-size:.85rem;line-height:1.35}
-.stamp b{font-family:var(--serif);font-weight:400;font-size:1.25rem;display:block}
+.stamp b{font-family:var(--sans);font-weight:700;font-size:1.15rem;letter-spacing:-.02em;display:block}
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:minmax(0,1fr)}
-  .facts{grid-template-columns:repeat(2,auto)}
+  .facts{grid-template-columns:repeat(3,auto);gap:.6rem 1.6rem}
   .stamp{left:10px}
   .stamp{display:none}
 }
@@ -153,7 +155,7 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .places{list-style:none;margin:0;padding:0}
 .places li{display:grid;grid-template-columns:2.4rem 1fr;gap:.2rem 1rem;padding:1.3rem 0;border-bottom:1px solid rgba(245,239,230,.18)}
 .places li:first-child{border-top:1px solid rgba(245,239,230,.18)}
-.places .n{font:500 .8rem/1.9 var(--mono);color:#e8b39f}
+.places .n{font:700 .8rem/1.9 var(--mono);color:#e8b39f}
 .places h3{font-size:1.45rem}
 .places p{grid-column:2;color:rgba(245,239,230,.78);font-size:.95rem}
 .loc-img{position:relative;border-radius:18px;overflow:hidden;min-height:420px}
@@ -174,14 +176,14 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .near li{display:grid;grid-template-columns:1fr auto;gap:.15rem 1rem;padding:1rem 0;border-bottom:var(--hair)}
 .near li b{font-weight:600;font-size:1rem}
 .near li span{grid-column:1;font-size:.88rem;color:var(--muted);line-height:1.45}
-.near li i{grid-column:2;grid-row:1/span 2;font:500 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--terra-deep);white-space:nowrap}
+.near li i{grid-column:2;grid-row:1/span 2;font:700 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--terra-deep);white-space:nowrap}
 @media (max-width:900px){.near{grid-template-columns:1fr}}
 
 /* guía */
 .guide-box > summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
 .guide-box > summary::-webkit-details-marker{display:none}
 .guide-box > summary > span:first-child{display:flex;flex-direction:column;gap:.7rem}
-.guide-title{font:400 clamp(2.1rem,4.4vw,3.5rem)/1.05 var(--serif);letter-spacing:-.01em}
+.guide-title{font:600 clamp(2.1rem,4.4vw,3.5rem)/1.05 var(--sans);letter-spacing:-.025em}
 .guide-title em{color:#e8b39f}
 .guide-sub{color:rgba(245,239,230,.75);max-width:34rem}
 .guide-toggle{flex:none;width:56px;height:56px;border-radius:50%;border:1px solid rgba(245,239,230,.4);position:relative;transition:background .2s,transform .35s var(--ease)}
@@ -197,7 +199,7 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .faq details{border-bottom:1px solid rgba(245,239,230,.18)}
 .faq summary{list-style:none;cursor:pointer;padding:1rem 2rem 1rem 0;position:relative;font-weight:600}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:0;top:.8rem;font:400 1.5rem/1 var(--serif);color:#e8b39f;transition:transform .25s var(--ease)}
+.faq summary::after{content:"+";position:absolute;right:0;top:.8rem;font:300 1.6rem/1 var(--sans);color:#e8b39f;transition:transform .25s var(--ease)}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 0 1.1rem;font-size:.94rem;color:rgba(245,239,230,.8)}
 .faq a{color:var(--paper)}
@@ -217,9 +219,10 @@ dialog.lb img{max-height:86vh;width:auto;max-width:100%;border-radius:10px;margi
 .cal-nav .meta{color:var(--ink)}
 .months{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
 @media (max-width:640px){.months{grid-template-columns:1fr}.months .m:nth-child(2){display:none}}
-.m h3{font-size:1.35rem;text-transform:capitalize;margin-bottom:.7rem}
+.m h3{font-size:1.35rem;margin-bottom:.7rem}
+.m h3::first-letter{text-transform:uppercase}
 .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
-.dow{font:500 .68rem/2 var(--mono);text-align:center;color:var(--muted);text-transform:uppercase}
+.dow{font:700 .68rem/2 var(--mono);text-align:center;color:var(--muted);text-transform:uppercase}
 .d{aspect-ratio:1;border:0;border-radius:9px;background:var(--green-soft);color:var(--green);font:600 .88rem/1 var(--sans);cursor:pointer;position:relative;padding:0;transition:background .15s}
 .d:hover{background:#c9d6c7}
 .d.past{background:transparent;color:#bdb3a7;cursor:default;font-weight:400}
@@ -257,7 +260,7 @@ footer a{color:var(--ink)}
 .pay-ico svg{width:34px;height:22px}
 .pay-ico.visa{font:italic 800 .95rem/1 var(--sans);color:#1a1f71;letter-spacing:.02em}
 .pay-ico.airbnb-b{font:700 .9rem/1 var(--sans);color:#ff385c;letter-spacing:-.02em}
-.pay-ico.booking-b{background:#003580;border-color:#003580;color:#fff;font:700 .68rem/1 var(--sans);letter-spacing:-.01em}
+.pay-ico.booking-b{display:flex;align-items:center;justify-content:center;background:#003580;border-color:#003580;color:#fff;font:700 .66rem/1 var(--sans);letter-spacing:-.02em;white-space:nowrap}
 .pay-ico.booking-b span{color:#8fc0ff}
 .near li b small{font-weight:500;font-size:.8rem;color:var(--terra-deep)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -387,8 +390,8 @@ footer a{color:var(--ink)}
         <ul class="places">
           <li><span class="n">3 min</span><h3>Avenida Corrientes</h3><p>A 2 cuadras: la calle de los teatros, las librerías y las pizzerías clásicas.</p></li>
           <li><span class="n">7 min</span><h3>Congreso de la Nación</h3><p>El Palacio del Congreso y su plaza, uno de los paseos más fotografiados.</p></li>
-          <li><span class="n">15 min</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
           <li><span class="n">13 min</span><h3>Palacio de Aguas Corrientes</h3><p>Una de las fachadas más lindas de la ciudad, con 300.000 piezas de cerámica.</p></li>
+          <li><span class="n">15 min</span><h3>El Obelisco</h3><p>El símbolo de la ciudad y la Avenida 9 de Julio, caminando por Corrientes.</p></li>
           <li><span class="n">15 min</span><h3>Teatro Colón</h3><p>Uno de los grandes teatros líricos del mundo, con visitas guiadas.</p></li>
         </ul>
         <figure class="loc-img" style="margin:0">
@@ -438,10 +441,10 @@ footer a{color:var(--ink)}
         <div class="near-col">
           <h3>Teatros y paseos</h3>
           <ul>
+            <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3 min</i></li>
             <li><b>Teatro San Martín</b><span>Av. Corrientes 1530. Teatro, cine y danza.</span><i>5 min</i></li>
             <li><b>Teatro Colón</b><span>Cerrito 628. Ópera, ballet y visitas guiadas.</span><i>15 min</i></li>
             <li><b>Teatro Cervantes</b><span>Av. Córdoba 1155. El Teatro Nacional.</span><i>17 min</i></li>
-            <li><b>Calle Corrientes</b><span>Los teatros de revista y musicales, entre librerías abiertas hasta tarde.</span><i>3 min</i></li>
             <li><b>Peatonal Lavalle</b><span>La calle de los cines, camino a Florida.</span><i>20 min</i></li>
             <li><b>El Ateneo Grand Splendid</b><span>Av. Santa Fe 1860. Una librería dentro de un antiguo teatro.</span><i>20 min</i></li>
             <li><b>Calle Florida <small>(zona de cambio $)</small></b><span>La peatonal comercial del centro, hasta Galerías Pacífico.</span><i>24 min</i></li>
