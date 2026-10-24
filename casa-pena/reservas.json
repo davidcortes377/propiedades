@@ -1,7 +1,6 @@
 {
   "_instrucciones": "Archivo generado automáticamente cada hora desde el calendario de Airbnb. No lo edites a mano: agrega las reservas que no vienen de Airbnb en reservas-manuales.json.",
   "reservas": [
-    {"entrada": "2026-10-23", "salida": "2026-10-24"},
     {"entrada": "2026-10-24", "salida": "2026-11-03"},
     {"entrada": "2026-11-07", "salida": "2026-11-09"}
   ]
