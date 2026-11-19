@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
 <meta name="theme-color" content="#f4eee5">
 <title>Casa Peña | Departamento para 5 en el centro de Buenos Aires</title>
-<meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes en Rodríguez Peña 223, a 2 cuadras de la Avenida Corrientes, cerca del Congreso, el Obelisco y la zona de teatros. Consulta disponibilidad y reserva online.">
+<meta name="description" content="Casa Peña: departamento para hasta 5 huéspedes en Rodríguez Peña 223, 8° piso con ascensor, a 2 cuadras de la Avenida Corrientes, cerca del Congreso, el Obelisco y la zona de teatros. Consulta disponibilidad y reserva online.">
 <link rel="canonical" href="https://davidcortes377.github.io/propiedades/casa-pena/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://davidcortes377.github.io/propiedades/casa-pena/">
@@ -61,6 +61,8 @@
   interpolate-size:allow-keywords;
 }
 @media (min-width:1024px){:root{--fs-body:1.125rem}}
+/* celular: un punto más grande para leer sin zoom */
+@media (max-width:640px){:root{--fs-label:.875rem;--fs-small:1rem;--fs-body:1.125rem}}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;accent-color:var(--green);scrollbar-color:color-mix(in srgb,var(--green) 70%,transparent) var(--paper-2)}
 body{margin:0;background:var(--paper);color:var(--ink);font:500 var(--fs-body)/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;font-kerning:normal}
@@ -104,7 +106,7 @@ section[id]{scroll-margin-top:calc(var(--header) + 12px)}
 .nav a.on{color:var(--terra-deep)}
 .nav a.on::after{transform:scaleX(1)}
 @media (hover:hover) and (pointer:fine){.nav a:hover{color:var(--ink)}.nav a:hover::after{transform:scaleX(1)}}
-.top .btn{min-height:2.6rem;padding:0 1.15rem;font-size:var(--fs-small)}
+.top .btn{min-height:2.75rem;padding:0 1.15rem;font-size:var(--fs-small)}
 @media (max-width:1060px){
   :root{--header:112px}
   .top .wrap{flex-wrap:wrap;height:auto;padding-top:.8rem;row-gap:0}
@@ -174,7 +176,7 @@ section[id]{scroll-margin-top:calc(var(--header) + 12px)}
 @media (max-width:860px){.tour{grid-template-columns:1fr}.tour-video{order:2;width:min(100%,420px);justify-self:center}}
 
 /* ---------- galería ---------- */
-.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(8px,1vw,14px)}
+.gallery{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,17vw,250px);gap:clamp(8px,1vw,14px)}
 .gallery button{all:unset;position:relative;overflow:hidden;border-radius:14px;background:var(--paper-2);cursor:zoom-in}
 .gallery button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
@@ -252,7 +254,7 @@ dialog.lb img.swap{opacity:0;filter:blur(6px)}
 .cal-nav button:active{transform:scale(.94)}
 .cal-nav button:disabled{opacity:.35;cursor:default;transform:none}
 .months{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
-@media (max-width:640px){.months{grid-template-columns:minmax(0,1fr)}.months .m:nth-child(2){display:none}.m h3{display:none}}
+@media (max-width:640px){.months{grid-template-columns:minmax(0,1fr)}.months .m:nth-child(2){display:none}.m h3{display:none}.book>.panel:first-child{padding:1.1rem .75rem}.grid7{gap:3px}}
 .m h3{font-size:1.25rem;margin-bottom:.8rem}
 .m h3::first-letter{text-transform:uppercase}
 .grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
@@ -373,6 +375,7 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
   .js .reveal-list.in>*:nth-child(4){transition-delay:.18s}
   .js .reveal-list.in>*:nth-child(5){transition-delay:.24s}
   .js .reveal-list.in>*:nth-child(6){transition-delay:.3s}
+  .js .reveal-list.in>*:nth-child(n+7){transition-delay:.36s}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -403,7 +406,7 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
       <div class="hero-copy">
         <p class="hero-kicker">Rodríguez Peña 223, Buenos Aires</p>
         <h1 id="titulo"><span class="line"><span>Tu casa en el</span></span><span class="line"><span><em>corazón</em> de</span></span><span class="line"><span>Buenos Aires</span></span></h1>
-        <p class="hero-sub">Un departamento luminoso para hasta cinco personas, a dos cuadras de la Avenida Corrientes.</p>
+        <p class="hero-sub">Un departamento luminoso para hasta cinco personas, en un 8° piso con ascensor, a dos cuadras de la Avenida Corrientes.</p>
         <div class="ctas">
           <a class="btn" href="#disponibilidad">Ver disponibilidad</a>
           <a class="btn btn-line" href="https://www.airbnb.com.ar/rooms/1791893817148415420" target="_blank" rel="noopener">Reservar en Airbnb <svg class="ic ic-arrow" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg></a>
@@ -424,6 +427,7 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></svg>Hasta 5 huéspedes</li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></svg>Aire frío y calor</li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></svg>Wi-Fi y Chromecast</li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H136V40h64ZM120,40V216H56V40ZM74.34,109.66a8,8,0,0,1,0-11.32l16-16a8,8,0,0,1,11.32,0l16,16a8,8,0,0,1-11.32,11.32L96,99.31l-10.34,10.35A8,8,0,0,1,74.34,109.66Zm107.32,36.68a8,8,0,0,1,0,11.32l-16,16a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L160,156.69l10.34-10.35A8,8,0,0,1,181.66,146.34Z"/></svg>8° piso con ascensor</li>
         </ul>
       </div>
       <figure class="reveal-img"><img src="fotos/vista-atardecer.jpg" alt="Atardecer sobre los edificios de estilo francés, visto desde la ventana" width="900" height="1599" loading="lazy"></figure>
@@ -447,14 +451,14 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
     <div class="wrap">
       <div class="head">
         <h2 id="t-fotos">Pensado para <em>sentirse en casa</em></h2>
-        <p>Dormitorio con cama doble y vista a los techos de la ciudad, living con sofá cama doble y cama sencilla, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
+        <p>Dormitorio con cama doble y vista a los techos de la ciudad, living con tres camas sencillas, comedor para compartir, cocina equipada y un baño cuidado al detalle. Toca cualquier foto para verla en grande.</p>
       </div>
       <div class="gallery" id="gallery">
-        <button class="g-big reveal-img" data-i="0" aria-label="Ver foto: living"><img src="fotos/living.jpg" alt="Living completo con sofá, TV y mesa ratona" loading="lazy"></button>
+        <button class="g-big reveal-img" data-i="0" aria-label="Ver foto: living"><img src="fotos/living.jpg" alt="Living completo con TV y mesa ratona" loading="lazy"></button>
         <button class="g-tall reveal-img" data-i="1" aria-label="Ver foto: dormitorio"><img src="fotos/dormitorio.jpg" alt="Dormitorio con vista a techos franceses" loading="lazy"></button>
-        <button class="reveal-img" data-i="2" aria-label="Ver foto: sofá cama"><img src="fotos/sofa-espejos.jpg" alt="Sofá cama doble gris con espejos redondos" loading="lazy"></button>
+        <button class="reveal-img" data-i="2" aria-label="Ver foto: cama sencilla del living"><img src="fotos/sofa-espejos.jpg" alt="Cama sencilla del living con almohadones y espejos redondos" loading="lazy"></button>
         <button class="reveal-img" data-i="3" aria-label="Ver foto: mueble de TV"><img src="fotos/living-tv-detalle.jpg" alt="Mueble de TV con plantas" loading="lazy"></button>
-        <button class="g-wide reveal-img" data-i="4" aria-label="Ver foto: cocina y comedor"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
+        <button class="g-big reveal-img" data-i="4" aria-label="Ver foto: cocina y comedor"><img src="fotos/cocina-comedor.jpg" alt="Cocina y comedor con ventanal" loading="lazy"></button>
         <button class="g-tall reveal-img" data-i="5" aria-label="Ver foto: pasillo"><img src="fotos/pasillo.jpg" alt="Pasillo hacia el dormitorio y el baño" loading="lazy"></button>
         <button class="reveal-img" data-i="6" aria-label="Ver foto: baño"><img src="fotos/bano.jpg" alt="Baño con bacha de apoyo y eucalipto" loading="lazy"></button>
         <button class="reveal-img" data-i="7" aria-label="Ver foto: dormitorio al atardecer"><img src="fotos/dormitorio-atardecer.jpg" alt="Dormitorio al atardecer" loading="lazy"></button>
@@ -463,6 +467,7 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
         <button class="g-wide reveal-img" data-i="10" aria-label="Ver foto: living y comedor"><img src="fotos/sofa-comedor.jpg" alt="Living integrado con el comedor" loading="lazy"></button>
         <button class="reveal-img" data-i="11" aria-label="Ver foto: cocina"><img src="fotos/cocina.jpg" alt="Cocina con horno, anafe eléctrico y bacha doble" loading="lazy"></button>
         <button class="reveal-img" data-i="12" aria-label="Ver foto: living con TV"><img src="fotos/living-tv.jpg" alt="Living con TV y mesa ratona" loading="lazy"></button>
+        <button class="g-wide reveal-img" data-i="13" aria-label="Ver foto: living con las tres camas"><img src="fotos/living-camas.jpg" alt="Living con tres camas sencillas, mesa ratona y TV" loading="lazy" style="object-position:50% 62%"></button>
       </div>
     </div>
   </section>
@@ -475,12 +480,14 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
           <h2 id="t-carac">Todo listo para <em>tu estadía</em></h2>
         </div>
         <ul class="feats reveal-list">
-          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con un sofá cama doble grande y una cama sencilla. 1 baño completo.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M216,72H32V48a8,8,0,0,0-16,0V208a8,8,0,0,0,16,0V176H240v32a8,8,0,0,0,16,0V112A40,40,0,0,0,216,72ZM32,88h72v72H32Zm88,72V88h96a24,24,0,0,1,24,24v48Z"/></svg><h3>Hasta 5 huéspedes</h3><p>Dormitorio con cama doble y living con tres camas sencillas. 1 baño completo.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H136V40h64ZM120,40V216H56V40ZM74.34,109.66a8,8,0,0,1,0-11.32l16-16a8,8,0,0,1,11.32,0l16,16a8,8,0,0,1-11.32,11.32L96,99.31l-10.34,10.35A8,8,0,0,1,74.34,109.66Zm107.32,36.68a8,8,0,0,1,0,11.32l-16,16a8,8,0,0,1-11.32,0l-16-16a8,8,0,0,1,11.32-11.32L160,156.69l10.34-10.35A8,8,0,0,1,181.66,146.34Z"/></svg><h3>8° piso con ascensor</h3><p>Sin escaleras con las valijas.</p></li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M223.77,150.09a8,8,0,0,1-5.86,9.68l-24.64,6,6.46,24.11a8,8,0,0,1-5.66,9.8A8.25,8.25,0,0,1,192,200a8,8,0,0,1-7.72-5.93l-7.72-28.8L136,141.86v46.83l21.66,21.65a8,8,0,0,1-11.32,11.32L128,203.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L120,188.69V141.86L79.45,165.27l-7.72,28.8A8,8,0,0,1,64,200a8.25,8.25,0,0,1-2.08-.27,8,8,0,0,1-5.66-9.8l6.46-24.11-24.64-6a8,8,0,0,1,3.82-15.54l29.45,7.23L112,128,71.36,104.54l-29.45,7.23A7.85,7.85,0,0,1,40,112a8,8,0,0,1-1.91-15.77l24.64-6L56.27,66.07a8,8,0,0,1,15.46-4.14l7.72,28.8L120,114.14V67.31L98.34,45.66a8,8,0,0,1,11.32-11.32L128,52.69l18.34-18.35a8,8,0,0,1,11.32,11.32L136,67.31v46.83l40.55-23.41,7.72-28.8a8,8,0,0,1,15.46,4.14l-6.46,24.11,24.64,6A8,8,0,0,1,216,112a7.85,7.85,0,0,1-1.91-.23l-29.45-7.23L144,128l40.64,23.46,29.45-7.23A8,8,0,0,1,223.77,150.09Z"/></svg><h3>Aire acondicionado</h3><p>Frío y calor para cualquier época del año.</p></li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"/></svg><h3>Wi-Fi y TV con Chromecast</h3><p>Para trabajar, planificar el día o ver tus series favoritas.</p></li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M88,48V16a8,8,0,0,1,16,0V48a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,128,56Zm32,0a8,8,0,0,0,8-8V16a8,8,0,0,0-16,0V48A8,8,0,0,0,160,56Zm92.8,46.4L224,124v60a32,32,0,0,1-32,32H64a32,32,0,0,1-32-32V124L3.2,102.4a8,8,0,0,1,9.6-12.8L32,104V80a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8v24l19.2-14.4a8,8,0,0,1,9.6,12.8ZM208,88H48v96a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16Z"/></svg><h3>Cocina equipada</h3><p>Horno, anafe, heladera, microondas, pava eléctrica y vajilla.</p></li>
           <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"/></svg><h3>Cafetera espresso</h3><p>El primer café del día, sin salir de casa.</p></li>
-          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M64,236a12,12,0,1,1-12-12A12,12,0,0,1,64,236Zm20-44a12,12,0,1,0,12,12A12,12,0,0,0,84,192Zm-64,0a12,12,0,1,0,12,12A12,12,0,0,0,20,192Zm32-32a12,12,0,1,0,12,12A12,12,0,0,0,52,160ZM256,40a8,8,0,0,1-8,8H219.31L191.46,75.86,169.8,202.65a16,16,0,0,1-27.09,8.66l-98-98a16,16,0,0,1,8.69-27.1L180.14,64.54l30.2-30.2A8,8,0,0,1,216,32h32A8,8,0,0,1,256,40ZM174.21,81.79,56,102l98,98Z"/></svg><h3>Ropa blanca y básicos</h3><p>Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M64,236a12,12,0,1,1-12-12A12,12,0,0,1,64,236Zm20-44a12,12,0,1,0,12,12A12,12,0,0,0,84,192Zm-64,0a12,12,0,1,0,12,12A12,12,0,0,0,20,192Zm32-32a12,12,0,1,0,12,12A12,12,0,0,0,52,160ZM256,40a8,8,0,0,1-8,8H219.31L191.46,75.86,169.8,202.65a16,16,0,0,1-27.09,8.66l-98-98a16,16,0,0,1,8.69-27.1L180.14,64.54l30.2-30.2A8,8,0,0,1,216,32h32A8,8,0,0,1,256,40ZM174.21,81.79,56,102l98,98Z"/></svg><h3>Ropa de cama y toallas</h3><p>Sábanas y toallas incluidas para cada huésped.</p></li>
+          <li><svg class="ic" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M200,40H152V24a8,8,0,0,0-16,0V40H104a8,8,0,0,0,0,16h32V72H112a40,40,0,0,0-40,40v96a24,24,0,0,0,24,24h80a24,24,0,0,0,24-24V112a40,40,0,0,0-40-40H152V56h48a8,8,0,0,0,0-16Zm-16,72v96a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8V112a24,24,0,0,1,24-24h48A24,24,0,0,1,184,112Z"/></svg><h3>Champú, jabón y básicos</h3><p>Champú, jabón, papel higiénico y secador de pelo.</p></li>
         </ul>
       </div>
     </div>
@@ -677,7 +684,11 @@ footer{padding:clamp(3.5rem,6vw,5rem) 0 2.5rem;background:var(--paper)}
             </details>
             <details>
               <summary>¿Hay ropa blanca y toallas?</summary>
-              <p>Sí. Sábanas, toallas, jabón, shampoo, papel higiénico y secador de pelo están incluidos. El departamento no tiene lavarropas.</p>
+              <p>Sí. Sábanas, toallas, champú, jabón, papel higiénico y secador de pelo están incluidos. El departamento no tiene lavarropas.</p>
+            </details>
+            <details>
+              <summary>¿En qué piso está? ¿Hay ascensor?</summary>
+              <p>El departamento está en un 8° piso y el edificio tiene ascensor.</p>
             </details>
             <details>
               <summary>¿Puedo cocinar?</summary>
